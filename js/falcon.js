@@ -400,6 +400,7 @@ function loop(){
   if  (i<2400 && i>1650){
     group1.rotateZ( Math.PI*2/3000 );
     group.translateY( 0.1 );
+    orbitalStage.mesh.translateY( 1 );
     if (i<2000){
       camera.translateY(0.15);
     }
