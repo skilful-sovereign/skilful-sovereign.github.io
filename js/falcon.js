@@ -205,15 +205,13 @@ var OrbitalStage = function(){
   upperFuel.receiveShadow = true;
   this.mesh.add(upperFuel);
 
-
-  var geomSideWing = new THREE.CylinderGeometry(40,30,20,32,1);
-  var matSideWing = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.SmoothShading});
-  var sideWing = new THREE.Mesh(geomSideWing, matSideWing);
-  sideWing.position.set(0,290,0);
-  sideWing.castShadow = true;
-  sideWing.receiveShadow = true;
-  this.mesh.add(sideWing);
-
+  var geomCup = new THREE.CylinderGeometry(40,30,20,32,1);
+  var matCup = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.SmoothShading});
+  var cup = new THREE.Mesh(geomCup, matCup);
+  cup.position.set(0,290,0);
+  cup.castShadow = true;
+  cup.receiveShadow = true;
+  this.mesh.add(cup);
 
   var geomCaspule = new THREE.CylinderGeometry(40,40,120,32,1);
   var matCapsule = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.SmoothShading});
@@ -345,15 +343,6 @@ function createSea(){
   sea.mesh.position.y = -600;
   scene.add(sea.mesh);
 }
-
-function createSky(){
-  sky = new Sky();
-  sky.mesh.position.y = 10200;
-  sky.mesh.position.z = -5300;
-  sky.mesh.rotateX( -Math.PI/2 );
-  scene.add(sky.mesh);
-}
-
 
 //i is the clock
 
