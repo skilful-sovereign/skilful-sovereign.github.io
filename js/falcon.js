@@ -81,14 +81,14 @@ function createLights() {
 //functions that create 3d models
 
 var ReturnStage = function(){
-	this.mesh = new THREE.Object3D();
+  this.mesh = new THREE.Object3D();
   this.mesh.name = "returnStage";
 
 
-	var geomLowerFuel = new THREE.CylinderGeometry(30,30,440,32,1);
+  var geomLowerFuel = new THREE.CylinderGeometry(30,30,440,32,1);
   var matLowerFuel = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.SmoothShading});
   var lowerFuel = new THREE.Mesh(geomLowerFuel, matLowerFuel);
-	lowerFuel.castShadow = true;
+  lowerFuel.castShadow = true;
   lowerFuel.receiveShadow = true;
   this.mesh.add(lowerFuel);
 
@@ -99,7 +99,7 @@ var ReturnStage = function(){
   lowerEngine.position.set(0,-227,0);
   lowerEngine.castShadow = true;
   lowerEngine.receiveShadow = true;
-	this.mesh.add(lowerEngine);
+  this.mesh.add(lowerEngine);
 
   var geomLowerEngine1 = new THREE.CylinderGeometry(4,7,7,32,1);
   var matLowerEngine1 = new THREE.MeshPhongMaterial({color:Colors.gray, shading:THREE.SmoothShading});
