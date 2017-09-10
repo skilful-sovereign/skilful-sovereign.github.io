@@ -376,7 +376,7 @@ function loop(){
     if (i<800){
       camera.translateY( 0 );
     }
-    camera.translateX(0.2);
+    camera.translateX(0.4);
   }
   if  (i<1350 && i>1250){
     group.translateY( 1 );
@@ -385,14 +385,14 @@ function loop(){
   if  (i<1550 && i>1350){
 
     group1.translateY( 1 );
-    orbitalStage.mesh.translateY( 2 );
+    orbitalStage.mesh.translateY( 4 );
 
     camera.translateX(1);
   }
     if  (i<1650 && i>1550){
 
     group.translateY( 1 );
-    orbitalStage.mesh.translateY( 1 );
+    orbitalStage.mesh.translateY( 2 );
 
     camera.translateX(1);
   }
@@ -409,7 +409,7 @@ function loop(){
   if  (i<3400 && i>2400){
     group1.translateY( -1 );
     camera.translateY(-1);
-    camera.translateZ( -0.1 );
+    camera.translateZ( -0.2 );
   }
 
   if  (i<3520 && i>3400){
