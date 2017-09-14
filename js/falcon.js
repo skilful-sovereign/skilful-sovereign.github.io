@@ -91,7 +91,7 @@ var ReturnStage = function(){
   var matLowerFuel = new THREE.MeshPhongMaterial({color:Colors.white, shading:THREE.SmoothShading});
   var lowerFuel = new THREE.Mesh(geomLowerFuel, matLowerFuel);
   lowerFuel.castShadow = true;
-  lowerFuel.receiveShadow = true;
+  lowerFuel.receiveShadow = false;
   this.mesh.add(lowerFuel);
 
 
@@ -100,7 +100,7 @@ var ReturnStage = function(){
   var lowerEngine = new THREE.Mesh(geomLowerEngine, matLowerEngine);
   lowerEngine.position.set(0,-227,0);
   lowerEngine.castShadow = true;
-  lowerEngine.receiveShadow = true;
+  lowerEngine.receiveShadow = false;
   this.mesh.add(lowerEngine);
 
   var geomLowerEngine1 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -108,7 +108,7 @@ var ReturnStage = function(){
   var lowerEngine1 = new THREE.Mesh(geomLowerEngine1, matLowerEngine1);
   lowerEngine1.position.set(-14,-240,0);
   lowerEngine1.castShadow = true;
-  lowerEngine1.receiveShadow = true;
+  lowerEngine1.receiveShadow = false;
   this.mesh.add(lowerEngine1);
 
   var geomLowerEngine2 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -116,7 +116,7 @@ var ReturnStage = function(){
   var lowerEngine2 = new THREE.Mesh(geomLowerEngine2, matLowerEngine2);
   lowerEngine2.position.set(14,-240,0);
   lowerEngine2.castShadow = true;
-  lowerEngine2.receiveShadow = true;
+  lowerEngine2.receiveShadow = false;
   this.mesh.add(lowerEngine2);
 
   var geomLowerEngine3 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -124,7 +124,7 @@ var ReturnStage = function(){
   var lowerEngine3 = new THREE.Mesh(geomLowerEngine3, matLowerEngine3);
   lowerEngine3.position.set(0,-240,0);
   lowerEngine3.castShadow = true;
-  lowerEngine3.receiveShadow = true;
+  lowerEngine3.receiveShadow = false;
   this.mesh.add(lowerEngine3);
 
   var geomLowerEngine4 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -132,7 +132,7 @@ var ReturnStage = function(){
   var lowerEngine4 = new THREE.Mesh(geomLowerEngine4, matLowerEngine4);
   lowerEngine4.position.set(7,-240,-14);
   lowerEngine4.castShadow = true;
-  lowerEngine4.receiveShadow = true;
+  lowerEngine4.receiveShadow = false;
   this.mesh.add(lowerEngine4);
 
   var geomLowerEngine5 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -140,7 +140,7 @@ var ReturnStage = function(){
   var lowerEngine5 = new THREE.Mesh(geomLowerEngine5, matLowerEngine5);
   lowerEngine5.position.set(7,-240,14);
   lowerEngine5.castShadow = true;
-  lowerEngine5.receiveShadow = true;
+  lowerEngine5.receiveShadow = false;
   this.mesh.add(lowerEngine5);
 
   var geomLowerEngine6 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -148,7 +148,7 @@ var ReturnStage = function(){
   var lowerEngine6 = new THREE.Mesh(geomLowerEngine6, matLowerEngine6);
   lowerEngine6.position.set(-7,-240,-14);
   lowerEngine6.castShadow = true;
-  lowerEngine6.receiveShadow = true;
+  lowerEngine6.receiveShadow = false;
   this.mesh.add(lowerEngine6);
 
   var geomLowerEngine7 = new THREE.CylinderGeometry(5,7,10,32,1);
@@ -156,7 +156,7 @@ var ReturnStage = function(){
   var lowerEngine7 = new THREE.Mesh(geomLowerEngine7, matLowerEngine7);
   lowerEngine7.position.set(-7,-240,14);
   lowerEngine7.castShadow = true;
-  lowerEngine7.receiveShadow = true;
+  lowerEngine7.receiveShadow = false;
   this.mesh.add(lowerEngine7);
 };
 
@@ -170,7 +170,7 @@ var ReturnFlame = function(){
   var returnFlame1 = new THREE.Mesh(geomReturnFlame1, matReturnFlame1);
   returnFlame1.position.set(-14,-265,0);
   returnFlame1.castShadow = true;
-  returnFlame1.receiveShadow = true;
+  returnFlame1.receiveShadow = false;
   this.mesh.add(returnFlame1);
 
   var geomReturnFlame2 = new THREE.CylinderGeometry(5,1,40,32,1);
@@ -179,7 +179,7 @@ var ReturnFlame = function(){
   var returnFlame2 = new THREE.Mesh(geomReturnFlame2, matReturnFlame2);
   returnFlame2.position.set(14,-265,0);
   returnFlame2.castShadow = true;
-  returnFlame2.receiveShadow = true;
+  returnFlame2.receiveShadow = false;
   this.mesh.add(returnFlame2);
 
   var geomReturnFlame3 = new THREE.CylinderGeometry(5,1,40,32,1);
@@ -188,7 +188,7 @@ var ReturnFlame = function(){
   var returnFlame3 = new THREE.Mesh(geomReturnFlame3, matReturnFlame3);
   returnFlame3.position.set(7,-265,14);
   returnFlame3.castShadow = true;
-  returnFlame3.receiveShadow = true;
+  returnFlame3.receiveShadow = false;
   this.mesh.add(returnFlame3);
 
   var geomReturnFlame4 = new THREE.CylinderGeometry(5,1,40,32,1);
@@ -197,7 +197,7 @@ var ReturnFlame = function(){
   var returnFlame4 = new THREE.Mesh(geomReturnFlame4, matReturnFlame4);
   returnFlame4.position.set(7,-265,-14);
   returnFlame4.castShadow = true;
-  returnFlame4.receiveShadow = true;
+  returnFlame4.receiveShadow = false;
   this.mesh.add(returnFlame4);
 
   var geomReturnFlame5 = new THREE.CylinderGeometry(5,1,50,32,1);
@@ -206,7 +206,7 @@ var ReturnFlame = function(){
   var returnFlame5 = new THREE.Mesh(geomReturnFlame5, matReturnFlame5);
   returnFlame5.position.set(0,-270,0);
   returnFlame5.castShadow = true;
-  returnFlame5.receiveShadow = true;
+  returnFlame5.receiveShadow = false;
   returnFlame5.opacity = 0.3;
   this.mesh.add(returnFlame5);
 
@@ -216,7 +216,7 @@ var ReturnFlame = function(){
   var returnFlame6 = new THREE.Mesh(geomReturnFlame6, matReturnFlame6);
   returnFlame6.position.set(-7,-265,14);
   returnFlame6.castShadow = true;
-  returnFlame6.receiveShadow = true;
+  returnFlame6.receiveShadow = false;
   this.mesh.add(returnFlame6);
 
   var geomReturnFlame7 = new THREE.CylinderGeometry(5,1,40,32,1);
@@ -225,7 +225,7 @@ var ReturnFlame = function(){
   var returnFlame7 = new THREE.Mesh(geomReturnFlame7, matReturnFlame7);
   returnFlame7.position.set(-7,-265,-14);
   returnFlame7.castShadow = true;
-  returnFlame7.receiveShadow = true;
+  returnFlame7.receiveShadow = false;
   this.mesh.add(returnFlame7);
   
 }
@@ -240,7 +240,7 @@ var OrbitalFlame = function(){
   var orbitalFlame = new THREE.Mesh(geomOribtalFlame, matOrbitalFlame);
   orbitalFlame.position.set(0,180,0);
   orbitalFlame.castShadow = true;
-  orbitalFlame.receiveShadow = true;
+  orbitalFlame.receiveShadow = false;
   this.mesh.add(orbitalFlame);
 }
 
@@ -253,7 +253,7 @@ var LegOne = function(){
   var leg1 = new THREE.Mesh(geomLeg1, matLeg1);
   leg1.position.set(0,-170,29);
   leg1.castShadow = true;
-  leg1.receiveShadow = true;
+  leg1.receiveShadow = false;
   this.mesh.add(leg1);
 };
 var LegTwo = function(){
@@ -265,7 +265,7 @@ var LegTwo = function(){
   var leg2 = new THREE.Mesh(geomLeg2, matLeg2);
   leg2.position.set(29,-170,0);
   leg2.castShadow = true;
-  leg2.receiveShadow = true;
+  leg2.receiveShadow = false;
   this.mesh.add(leg2);
 };
 var LegThree = function(){
@@ -277,7 +277,7 @@ var LegThree = function(){
   var leg3 = new THREE.Mesh(geomLeg3, matLeg3);
   leg3.position.set(-29,-170,0);
   leg3.castShadow = true;
-  leg3.receiveShadow = true;
+  leg3.receiveShadow = false;
   this.mesh.add(leg3);
 };
 var LegFour = function(){
@@ -289,7 +289,7 @@ var LegFour = function(){
   var leg4 = new THREE.Mesh(geomLeg4, matLeg4);
   leg4.position.set(0,-170,-29);
   leg4.castShadow = true;
-  leg4.receiveShadow = true;
+  leg4.receiveShadow = false;
   this.mesh.add(leg4);
 };
 
@@ -302,7 +302,7 @@ var BrakeOne = function(){
   var brake1 = new THREE.Mesh(geomBrake1, matBrake1);
   brake1.position.set(0,150,30);
   brake1.castShadow = true;
-  brake1.receiveShadow = true;
+  brake1.receiveShadow = false;
   this.mesh.add(brake1);
 };
 
@@ -315,7 +315,7 @@ var BrakeTwo = function(){
   var brake2 = new THREE.Mesh(geomBrake2, matBrake2);
   brake2.position.set(0,150,-30);
   brake2.castShadow = true;
-  brake2.receiveShadow = true;
+  brake2.receiveShadow = false;
   this.mesh.add(brake2);
 };
 
@@ -328,7 +328,7 @@ var BrakeThree = function(){
   var brake3 = new THREE.Mesh(geomBrake3, matBrake3);
   brake3.position.set(30,150,0);
   brake3.castShadow = true;
-  brake3.receiveShadow = true;
+  brake3.receiveShadow = false;
   this.mesh.add(brake3);
 };
 
@@ -341,7 +341,7 @@ var BrakeFour = function(){
   var brake4 = new THREE.Mesh(geomBrake4, matBrake4);
   brake4.position.set(-30,150,0);
   brake4.castShadow = true;
-  brake4.receiveShadow = true;
+  brake4.receiveShadow = false;
   this.mesh.add(brake4);
 };
 
@@ -354,7 +354,7 @@ var OrbitalStage = function(){
   var upperFuel = new THREE.Mesh(geomUpperFuel, matUpperFuel);
   upperFuel.position.y = 260;
   upperFuel.castShadow = true;
-  upperFuel.receiveShadow = true;
+  upperFuel.receiveShadow = false;
   this.mesh.add(upperFuel);
 
   var geomCup = new THREE.CylinderGeometry(40,30,20,32,1);
@@ -362,14 +362,14 @@ var OrbitalStage = function(){
   var cup = new THREE.Mesh(geomCup, matCup);
   cup.position.set(0,290,0);
   cup.castShadow = true;
-  cup.receiveShadow = true;
+  cup.receiveShadow = false;
   this.mesh.add(cup);
 
   var geomUpperEngine = new THREE.CylinderGeometry(15,25,30,32,1);
   var matUpperEngine = new THREE.MeshPhongMaterial({color:Colors.gray, shading:THREE.SmoothShading});
   var upperEngine = new THREE.Mesh(geomUpperEngine, matUpperEngine);
   upperEngine.position.set(0,210,0);
-  upperEngine.castShadow = false;
+  upperEngine.castShadow = true;
   upperEngine.receiveShadow = false;
   this.mesh.add(upperEngine);
 
@@ -384,7 +384,7 @@ Fairing = function(){
   var capsule = new THREE.Mesh(geomCaspule, matCapsule);
   capsule.position.set(0,360,0);
   capsule.castShadow = true;
-  capsule.receiveShadow = true;
+  capsule.receiveShadow = false;
   this.mesh.add(capsule);
 
   var geomCone = new THREE.CylinderGeometry(5,40,40,32,1);
@@ -392,7 +392,7 @@ Fairing = function(){
   var cone = new THREE.Mesh(geomCone, matCone);
   cone.position.set(0,440,0);
   cone.castShadow = true;
-  cone.receiveShadow = true;
+  cone.receiveShadow = false;
   this.mesh.add(cone);
   
 }
