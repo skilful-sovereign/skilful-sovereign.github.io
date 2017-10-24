@@ -63,7 +63,9 @@ header.masthead {
  
  }
   header.masthead .header-content {
-    max-width: 1000px;
+
+    max-width: 100%;
+    max-width: 100%;
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center; }
