@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="icon" href="favicon1.png" type="image/x-icon">
+  <title>OMIKRON JobPrep</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <nav class="menu">
+      <button aria-expanded="false" aria-controls="menu-list">
+        <span class="open">☰</span>
+        <span class="close">X</span>
+      </button>
+      <ul id="menu-list">
+        <li>
+          <a href="">Home</a>
+        </li>
+        <li>
+          <a href="">MatHack</a>
+        </li>
+        <li>
+          <a href="">Projekti</a>
+        </li>
+        <li>
+          <a href="">O nama</a>
+        </li>
+
+      </ul>
+    </nav>
+    <div class="top">
+      <header class="hero">
+
+      </header>
+
+
+    </div>
+    <section class="prijava">
+      <div class="feature2" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ';" style="cursor: pointer;">
+        <h1>PRIJAVA</h1>
+      </div>
+    </section>
+
+    <section class="features1">
+      <div class="feature">
+
+        <h2>O projektu</h2>
+        <p>Studentska organizacija Matematičkog fakulteta OMIKRON organizuje dvodnevni projekat JobPrep 17. i 18. marta 2018. godine u zgradi StartIT Centra.  </p>
+        <p>Projekat je namenjen studentima završnih godina i master studija sa fakulteta koji u svom programu izučavaju informacione tehnologije.</p>
+        <p></p>
+      </div>
+      <div class="feature video">
+        <div class="intrinsic-container intrinsic-container-16x9">
+          <iframe src="https://www.youtube.com/embed/EVEyge1-ZoE" allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </section>
+    <section class="features2">
+
+      <div class="feature">
+
+
+        <h2>Radionice</h2>
+        <p>U okviru projekta, učesnici će imati priliku da nauče veštine koje će im biti neophodne pri traženju posla.</p>
+        <p>📝 Kako napisati dobar CV? 📝</p>
+        <p>Kako napraviti atraktivan LinkedIn profil?</p>
+        <p>💬 Panel diskusija 💬</p>
+        <p>⚡ Simulacija razgovora za posao ⚡</p>
+      </div>
+
+      <div class="feature">
+
+        <h2>Partneri</h2>
+        <p></p>
+      </div>
+    </section>
+
+
+
+  </div>
+
+<script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({ target }) {
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navButton.setAttribute('aria-expanded', !expanded);
+    }
+
+    navButton.addEventListener('click', toggleNav);
+
+</script>
+
+</body>
+
+</html>
