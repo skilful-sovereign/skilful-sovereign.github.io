@@ -108,12 +108,52 @@ img {
 }
 
 .feature2 {
-  background: #e62739;
+  background: linear-gradient( 90deg,  #e62739,  #b81f2d);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 1s ease infinite;
+  -moz-animation: Gradient 1s ease infinite;
+  animation: Gradient 1s ease infinite;
   padding: 20px;
   border: 0px solid white;
   text-align: center;
   box-shadow: 0 0 0px  rgba(0,0,0,0);
  }
+
+ @-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
 
 .video{
   background: #e3e3e3;
