@@ -12,6 +12,8 @@ html {
 }
 
 body {
+
+
   margin: 50px;
   background: white;
   background-position: fixed;
@@ -26,14 +28,21 @@ h6 {
   margin: 0 0 5px 0;
 }
 
+
+
 body {
   font-size: 20px;
+}
+
+button {
+  background: #89bdd3;
+  border: 0;
+  padding: 10px 20px;
 }
 
 img {
   max-width: 100%;
 }
-
 .intrinsic-container {
   position: relative;
   height: 0;
@@ -53,7 +62,6 @@ img {
   border: 0px solid white;
   box-shadow: 0 0 0px  rgba(0,0,0,0);
 }
-
 .wrapper {
   display: grid;
   grid-gap: 20px;
@@ -66,11 +74,18 @@ img {
     "hero hero hero"
     "hero hero hero"
 }
+.open{
+	color: white;
+}
+.close{
+	color: white;
+}
 
 .hero {
+
   grid-area: hero;
   min-height: 500px;
-  background: #4cb8da  url(images/hero4b.png);
+  background: #4cb8da  url(images/hero6.png);
   background-size: cover;
   background-position: center;
   padding: 50px;
@@ -80,33 +95,48 @@ img {
   justify-content: center;
 }
 
+.menu ul {
+  display: grid;
+  grid-gap: 10px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.menu a {
+  background: #89bdd3;
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+}
 .features1 {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
-
 .features2 {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
-
 .prijava {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
-
 .feature {
   background: linear-gradient(to bottom right, #4cb8da, #66cccc);
   padding: 20px;
   border: 0px solid white;
   text-align: center;
   box-shadow: 0 0 0px  rgba(0,0,0,0);
-  justify-content: center;
-}
+   justify-content: center;
 
+}
 .feature2 {
   background: #e62739;
   padding: 20px;
@@ -114,19 +144,60 @@ img {
   text-align: center;
   box-shadow: 0 0 0px  rgba(0,0,0,0);
  }
-
 .video{
   background: #e3e3e3;
   padding: 0px;
   border: 0px solid white;
   text-align: center;
   box-shadow: 0 0 0px  rgba(0,0,0,0);
+
 }
+
 
 .feature p {
   color: white;
 }
 
+[aria-controls="menu-list"] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .menu {
+    order: -1;
+    perspective: 800px;
+  }
+  [aria-controls="menu-list"] {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .menu ul {
+    max-height: 0;
+    overflow: hidden;
+    transform: rotateX(90deg);
+    transition: all 0.5s;
+  }
+
+  [aria-expanded="true"] ~ ul {
+    display: grid;
+    max-height: 500px;
+    transform: rotateX(0);
+  }
+
+  [aria-expanded="false"] .close {
+    display: none;
+  }
+
+  [aria-expanded="true"] .close {
+    display: inline-block;
+  }
+
+  [aria-expanded="true"] .open {
+    display: none;
+  }
+
+}
 
 @media (max-width: 700px) {
 body {
@@ -140,7 +211,16 @@ body {
     "hero hero hero"
   }
 .hero {
+  grid-area: hero;
   min-height: 250px;
+  background: #4cb8da url(images/hero5.png);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
   }
 }
 
