@@ -24,6 +24,11 @@ a:hover {
 	color:#000;
 }
 
+.white{
+  color:#fff;
+}
+
+
 .container {
   padding-top: 0px;
 }
@@ -148,8 +153,6 @@ code,
 
 footer {
   background: #DC080E;
-  background: #DC080E;
-  background-image: linear-gradient(#DC080E, #DC080E);
   padding-bottom: 0px;
 }
 
@@ -172,16 +175,6 @@ footer p {
   padding-bottom: 8px;
 }
 
-.img-website-mock {
-  position: relative;
-  background-image: url('img/web-mock.png');
-  height: 0;
-  padding-top: 71.8%;
-  margin-top: 80px;
-  z-index: 200 !important;
-}
-
-
 .img-matf {
   background-image: url('matf.svg');
   height: 250px;
@@ -202,21 +195,21 @@ footer p {
 
 .img-rtrk {
   background-image: url('rtrk.svg');
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
 }
 
 .img-ey {
   background-image: url('ey.svg');
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
 }
 
 
 .img-puzzle {
   background-image: url('puzzle.svg');
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
 }
 
 
@@ -226,8 +219,93 @@ footer p {
   width: 250px;
 }
 
+.img-isn {
+  background-image: url('isn.svg');
+  height: 250px;
+  width: 250px;
+}
+.img-deploy {
+  background-image: url('deploy.svg');
+  height: 250px;
+  width: 250px;
+}
+.img-icthub {
+  background-image: url('icthub.svg');
+  height: 250px;
+  width: 250px;
+}
+
 
 /* === MEDIA QUERIES === */
+
+@media only screen and (max-width: 430px) {
+  .img-logo {
+  height: 300px;
+  width: 300px;
+  padding-bottom: 8px;
+}
+  .img-rtrk {
+  background-image: url('rtrk.svg');
+  height: 300px;
+  width: 300px;
+}
+.img-ey {
+  background-image: url('ey.svg');
+  height: 100px;
+  width: 100px;
+}
+
+
+.img-puzzle {
+  background-image: url('puzzle.svg');
+  height: 100px;
+  width: 100px;
+}
+
+
+.img-dsc {
+  background-image: url('dsc.svg');
+  height: 200px;
+  width: 200px;
+}
+
+.img-isn {
+  background-image: url('isn.svg');
+  height: 200px;
+  width: 200px;
+}
+.img-deploy {
+  background-image: url('deploy.svg');
+  height: 200px;
+  width: 200px;
+}
+.img-icthub {
+  background-image: url('icthub.svg');
+  height: 200px;
+  width: 200px;
+}
+.img-matf {
+  background-image: url('matf.svg');
+  height: 200px;
+  width: 200px;
+}
+
+.img-startit {
+  background-image: url('startit.svg');
+  height: 200px;
+  width: 200px;
+}
+
+.img-omikron {
+  background-image: url('omikron.svg');
+  height: 200px;
+  width: 200px;
+}
+  .jumbotron {
+    height: 550px;
+  }
+
+}
 
 @media only screen and (min-width: 720px) {
   .jumbotron {
@@ -240,3 +318,4 @@ footer p {
 }
 
 }
+
