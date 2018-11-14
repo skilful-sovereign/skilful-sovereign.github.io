@@ -15122,7 +15122,7 @@ isLocalDebug = window.location.hostname.indexOf("dasprinzip.com") >= 0 || window
 
 loadwebgl = function()
 {
-    if (isLocalDebug) ASSET_PATH = "self-test/assets/";
+    if (isLocalDebug) ASSET_PATH = "https://curiosity.merckgroup.com/self-test/assets/";
     tunnelFlat.flat = true;
 
     highPerformance = !isPlatformMobile() && !QueryString.lowPerformance;
