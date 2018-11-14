@@ -1,0 +1,789 @@
+<html lang="en" class="no-touchevents webgl fullscreen desktop landscape"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="Self-Test">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+	<!-- Remove tap highlight on Windows Phone -->
+	<meta name="msapplication-tap-highlight" content="no">
+	<title>Self-Test</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+    <meta property="wb:webmaster" content="3f024cec59970669">
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://catch-curious.com/ogimage-selftest.jpeg">
+    <meta property="og:title" content="Self-Test - Curiosity">
+    <meta property="og:description" content="Discover why curiosity is crucial for our future. #alwayscurious">
+    <meta property="og:url" content="https://curiosity.merckgroup.com/selftest">
+
+    <!-- START: Google Analytics -->
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-TGD3FF"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-43815746-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+    </script>
+    <!-- END: Google Analytics -->
+
+    <!-- START: Google Tagmanager -->
+    <script type="text/javascript">
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TGD3FF');
+        dataLayer.push({'ua-code':'UA-43815746-1'});
+    </script>
+    <!-- END: Google Tagmanager -->
+
+	<link href="/self-test/assets/css/main.css" rel="stylesheet">
+
+    <style type="text/css">
+        #spin-loader {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0px;
+            width: 150px;
+            height: 170px;
+            z-index: 1000;
+        }
+
+        #spin-loader .icon {
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            background: url('/self-test/assets/images/spin-loader.svg') no-repeat;
+            animation-name: ckw;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        #spin-loader p {
+            width: 150px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Verdana', Arial, Helvetica, sans-serif;
+            color: #fbc12e;
+        }
+
+
+        @media only screen and (max-width: 840px) {
+            #spin-loader .icon {
+                background-size: 50% 50%;
+                background-position: center;
+            }
+            #spin-loader p {
+                margin-top: -35px;
+                font-size: 1.0rem;
+            }
+        }
+
+
+        @-webkit-keyframes ckw {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes ckw {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+
+	<script type="application/json" id="data">
+		{"results-endpoint":"\/selftest\/result","results-data":[],"rotate-device":{"headline":"Oops!","copy":"The test is optimized for landscape format. Please tilt your device."},"leave-layer":{"copy":"Abort test?","destination":"https:\/\/www.merckgroup.com\/en\/company\/curiosity.html"},"self-test":{"navigation":{"button-confirm":"Confirm","button-next":"Next question","button-previous":"Previous","button-update":"Change answer","button-cancel":"Exit test","button-info":"Info Button","button-exit":"Open catchcurious.com","button-exit-target":"http:\/\/www.catchcurious.com","button-leave-yes":"Yes","button-leave-no":"No"},"sections":{"demography":{"action-screen":{"headline":"Good to know","copy":"The first three questions will help us find out more about you as a person. Don't worry, we'll keep everything anonymous.","button":"Got it"},"questions":{"question-1":{"id":1,"category":"demography","copy":"Where do you currently live?","default-value":"Select country","dropdown":[{"value":"AF","text":"Afghanistan"},{"value":"AX","text":"\u00c5land"},{"value":"AL","text":"Albania"},{"value":"DZ","text":"Algeria"},{"value":"AS","text":"American Samoa"},{"value":"AD","text":"Andorra"},{"value":"AO","text":"Angola"},{"value":"AI","text":"Anguilla"},{"value":"AQ","text":"Antarctica"},{"value":"AG","text":"Antigua and Barbuda"},{"value":"AR","text":"Argentina"},{"value":"AM","text":"Armenia"},{"value":"AW","text":"Aruba"},{"value":"AU","text":"Australia"},{"value":"AT","text":"Austria"},{"value":"AZ","text":"Azerbaijan"},{"value":"BS","text":"Bahamas"},{"value":"BH","text":"Bahrain"},{"value":"BD","text":"Bangladesh"},{"value":"BB","text":"Barbados"},{"value":"BY","text":"Belarus"},{"value":"BE","text":"Belgium"},{"value":"BZ","text":"Belize"},{"value":"BJ","text":"Benin"},{"value":"BM","text":"Bermuda"},{"value":"BT","text":"Bhutan"},{"value":"BO","text":"Bolivia"},{"value":"BA","text":"Bosnia and Herzegovina"},{"value":"BW","text":"Botswana"},{"value":"BV","text":"Bouvet Island"},{"value":"BR","text":"Brazil"},{"value":"IO","text":"British Indian Ocean Territory"},{"value":"VG","text":"British Virgin Islands"},{"value":"BN","text":"Brunei Darussalam"},{"value":"BG","text":"Bulgaria"},{"value":"BF","text":"Burkina Faso"},{"value":"BI","text":"Burundi"},{"value":"KH","text":"Cambodia"},{"value":"CM","text":"Cameroon"},{"value":"CA","text":"Canada"},{"value":"CV","text":"Cape Verde"},{"value":"KY","text":"Cayman Islands"},{"value":"CF","text":"Central African Republic"},{"value":"TD","text":"Chad"},{"value":"CL","text":"Chile"},{"value":"CN","text":"China"},{"value":"CX","text":"Christmas Island"},{"value":"CC","text":"Cocos (Keeling) Islands"},{"value":"CO","text":"Colombia"},{"value":"KM","text":"Comoros"},{"value":"CG","text":"Congo"},{"value":"CK","text":"Cook Islands"},{"value":"CR","text":"Costa Rica"},{"value":"HR","text":"Croatia"},{"value":"CU","text":"Cuba"},{"value":"CW","text":"Cura\u00e7ao"},{"value":"CY","text":"Cyprus"},{"value":"CZ","text":"Czech Republic"},{"value":"CD","text":"Democratic Republic of the Congo"},{"value":"DK","text":"Denmark"},{"value":"DJ","text":"Djibouti"},{"value":"DM","text":"Dominica"},{"value":"DO","text":"Dominican Republic"},{"value":"EC","text":"Ecuador"},{"value":"EG","text":"Egypt"},{"value":"SV","text":"El Salvador"},{"value":"GQ","text":"Equatorial Guinea"},{"value":"ER","text":"Eritrea"},{"value":"EE","text":"Estonia"},{"value":"ET","text":"Ethiopia"},{"value":"FK","text":"Falkland Islands (Malvinas)"},{"value":"FO","text":"Faroe Islands"},{"value":"FM","text":"Federated States of Micronesia"},{"value":"FJ","text":"Fiji"},{"value":"FI","text":"Finland"},{"value":"FR","text":"France"},{"value":"GF","text":"French Guiana"},{"value":"PF","text":"French Polynesia"},{"value":"TF","text":"French Southern Territories"},{"value":"GA","text":"Gabon"},{"value":"GM","text":"Gambia"},{"value":"GE","text":"Georgia"},{"value":"DE","text":"Germany"},{"value":"GH","text":"Ghana"},{"value":"GI","text":"Gibraltar"},{"value":"GR","text":"Greece"},{"value":"GL","text":"Greenland"},{"value":"GD","text":"Grenada"},{"value":"GP","text":"Guadeloupe"},{"value":"GU","text":"Guam"},{"value":"GT","text":"Guatemala"},{"value":"GG","text":"Guernsey"},{"value":"GN","text":"Guinea"},{"value":"GW","text":"Guinea-Bissau"},{"value":"GY","text":"Guyana"},{"value":"HT","text":"Haiti"},{"value":"HM","text":"Heard Island and McDonald Mcdonald Islands"},{"value":"VA","text":"Holy See (Vatican City State)"},{"value":"HN","text":"Honduras"},{"value":"HK","text":"Hong Kong"},{"value":"HU","text":"Hungary"},{"value":"IS","text":"Iceland"},{"value":"IN","text":"India"},{"value":"ID","text":"Indonesia"},{"value":"IR","text":"Iran, Islamic Republic of"},{"value":"IQ","text":"Iraq"},{"value":"IE","text":"Ireland"},{"value":"IM","text":"Isle of Man"},{"value":"IL","text":"Israel"},{"value":"IT","text":"Italy"},{"value":"JM","text":"Jamaica"},{"value":"JP","text":"Japan"},{"value":"JE","text":"Jersey"},{"value":"JO","text":"Jordan"},{"value":"KZ","text":"Kazakhstan"},{"value":"KE","text":"Kenya"},{"value":"KI","text":"Kiribati"},{"value":"KP","text":"Korea, Democratic People's Republic of"},{"value":"KR","text":"Korea, Republic of"},{"value":"XK","text":"Kosovo"},{"value":"KW","text":"Kuwait"},{"value":"KG","text":"Kyrgyzstan"},{"value":"LA","text":"Lao People's Democratic Republic"},{"value":"LV","text":"Latvia"},{"value":"LB","text":"Lebanon"},{"value":"LS","text":"Lesotho"},{"value":"LR","text":"Liberia"},{"value":"LY","text":"Libya"},{"value":"LI","text":"Liechtenstein"},{"value":"LT","text":"Lithuania"},{"value":"LU","text":"Luxembourg"},{"value":"MO","text":"Macao"},{"value":"MK","text":"Macedonia, the Former Yugoslav Republic of"},{"value":"MG","text":"Madagascar"},{"value":"MW","text":"Malawi"},{"value":"MY","text":"Malaysia"},{"value":"MV","text":"Maldives"},{"value":"ML","text":"Mali"},{"value":"MT","text":"Malta"},{"value":"MH","text":"Marshall Islands"},{"value":"MQ","text":"Martinique"},{"value":"MR","text":"Mauritania"},{"value":"MU","text":"Mauritius"},{"value":"YT","text":"Mayotte"},{"value":"MX","text":"Mexico"},{"value":"MD","text":"Moldova, Republic of"},{"value":"MC","text":"Monaco"},{"value":"MN","text":"Mongolia"},{"value":"ME","text":"Montenegro"},{"value":"MS","text":"Montserrat"},{"value":"MA","text":"Morocco"},{"value":"MZ","text":"Mozambique"},{"value":"MM","text":"Myanmar"},{"value":"NA","text":"Namibia"},{"value":"NR","text":"Nauru"},{"value":"NP","text":"Nepal"},{"value":"NL","text":"Netherlands"},{"value":"NC","text":"New Caledonia"},{"value":"NZ","text":"New Zealand"},{"value":"NI","text":"Nicaragua"},{"value":"NE","text":"Niger"},{"value":"NG","text":"Nigeria"},{"value":"NU","text":"Niue"},{"value":"NF","text":"Norfolk Island"},{"value":"MP","text":"Northern Mariana Islands"},{"value":"NO","text":"Norway"},{"value":"OM","text":"Oman"},{"value":"PK","text":"Pakistan"},{"value":"PW","text":"Palau"},{"value":"PS","text":"Palestine, State of"},{"value":"PA","text":"Panama"},{"value":"PG","text":"Papua New Guinea"},{"value":"PY","text":"Paraguay"},{"value":"PE","text":"Peru"},{"value":"PH","text":"Philippines"},{"value":"PN","text":"Pitcairn"},{"value":"PL","text":"Poland"},{"value":"PT","text":"Portugal"},{"value":"PR","text":"Puerto Rico"},{"value":"QA","text":"Qatar"},{"value":"CI","text":"Republic of the Ivory Coast"},{"value":"RE","text":"Reunion"},{"value":"RO","text":"Romania"},{"value":"RU","text":"Russia"},{"value":"RW","text":"Rwanda"},{"value":"BL","text":"Saint Barthelemy"},{"value":"KN","text":"Saint Kitts and Nevis"},{"value":"LC","text":"Saint Lucia"},{"value":"MF","text":"Saint Martin"},{"value":"PM","text":"Saint Pierre and Miquelon"},{"value":"VC","text":"Saint Vincent and the Grenadines"},{"value":"WS","text":"Samoa"},{"value":"SM","text":"San Marino"},{"value":"ST","text":"Sao Tome and Principe"},{"value":"SA","text":"Saudi Arabia"},{"value":"SN","text":"Senegal"},{"value":"RS","text":"Serbia"},{"value":"SC","text":"Seychelles"},{"value":"SL","text":"Sierra Leone"},{"value":"SG","text":"Singapore"},{"value":"SX","text":"Sint Maarten"},{"value":"SK","text":"Slovakia"},{"value":"SI","text":"Slovenia"},{"value":"SB","text":"Solomon Islands"},{"value":"SO","text":"Somalia"},{"value":"ZA","text":"South Africa"},{"value":"GS","text":"South Georgia and the South Sandwich Islands"},{"value":"SS","text":"South Sudan"},{"value":"ES","text":"Spain"},{"value":"LK","text":"Sri Lanka"},{"value":"SD","text":"Sudan"},{"value":"SR","text":"Suriname"},{"value":"SJ","text":"Svalbard and Jan Mayen"},{"value":"SZ","text":"Swaziland"},{"value":"SE","text":"Sweden"},{"value":"CH","text":"Switzerland"},{"value":"SY","text":"Syrian Arab Republic"},{"value":"TW","text":"Taiwan"},{"value":"TJ","text":"Tajikistan"},{"value":"TH","text":"Thailand"},{"value":"TL","text":"Timor-Leste"},{"value":"TG","text":"Togo"},{"value":"TK","text":"Tokelau"},{"value":"TO","text":"Tonga"},{"value":"TT","text":"Trinidad and Tobago"},{"value":"TN","text":"Tunisia"},{"value":"TR","text":"Turkey"},{"value":"TM","text":"Turkmenistan"},{"value":"TC","text":"Turks and Caicos Islands"},{"value":"TV","text":"Tuvalu"},{"value":"VI","text":"US Virgin Islands"},{"value":"UG","text":"Uganda"},{"value":"UA","text":"Ukraine"},{"value":"AE","text":"United Arab Emirates"},{"value":"GB","text":"United Kingdom"},{"value":"TZ","text":"United Republic of Tanzania"},{"value":"UM","text":"United States Minor Outlying Islands"},{"value":"US","text":"United States Of America"},{"value":"UY","text":"Uruguay"},{"value":"UZ","text":"Uzbekistan"},{"value":"VU","text":"Vanuatu"},{"value":"VE","text":"Venezuela"},{"value":"VN","text":"Vietnam"},{"value":"WF","text":"Wallis and Futuna"},{"value":"EH","text":"Western Sahara"},{"value":"YE","text":"Yemen"},{"value":"ZM","text":"Zambia"},{"value":"ZW","text":"Zimbabwe"}],"info":"Your answer to this question will be kept anonymous."},"question-2":{"id":2,"copy":"In which sector do you work?","info":"Your answer to this question will be kept anonymous.","default-value":"Your working sector","dropdown":[{"value":"consumer-services","text":"Consumer Services"},{"value":"consumer-goods","text":"Consumer Goods"},{"value":"financials","text":"Financials"},{"value":"education","text":"Education"},{"value":"healthcare-and-pharmaceuticals","text":"Healthcare and Pharmaceuticals"},{"value":"computers-and-electronics","text":"Computers and Electronics"},{"value":"engineering","text":"Engineering"},{"value":"other","text":"Other"}]},"question-3":{"id":3,"category":"demography","copy":"When were you born?","default-value":"Select year","info":"Your answer to this question will be kept anonymous."}}},"self-assessment":{"action-screen":{"headline":"Good to know","copy":"In terms of your job and workplace, how much do you agree or disagree with the following statements?","button":"Next question"},"questions":{"question-1":{"id":4,"category":"inquisitiveness","copy":"My colleagues would describe me as someone who asks great questions.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?"},"question-2":{"id":5,"category":"inquisitiveness","copy":"I often review articles, blogs and podcasts to stay on top of things happening in my field.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?"},"question-3":{"id":6,"category":"creativity","copy":"I would rather be known for always trying new ideas than relying on widely accepted practices.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?"},"question-4":{"id":7,"category":"creativity","copy":"My colleagues would describe me as someone who sees problems as opportunities.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?"},"question-5":{"id":8,"category":"openness","copy":"I prefer to work with people who question my ideas rather than automatically agree to them.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?"},"question-6":{"id":9,"category":"openness","copy":"If I have a problem, I look beyond the first solution that comes to mind.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?"},"question-7":{"id":10,"category":"distress-tolerance","copy":"Uncertainty paralyses me and prevents me from acting.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?","reverse":true},"question-8":{"id":11,"category":"distress-tolerance","copy":"When I feel uncomfortable in a new situation, my performance suffers.","info":"In terms of your job and workplace, how much do you agree or disagree with the following statements?","reverse":true}},"answers":{"answer-1":"Strongly disagree","answer-2":"Somewhat disagree","answer-3":"Somewhat agree","answer-4":"Strongly agree"}},"individual-curiosity":{"action-screen":{"headline":"Good to know","copy":"For each of the following descriptions of a \"person\", please indicate how much that person is or is not like you.","button":"Next question"},"questions":{"question-1":{"id":12,"category":"inquisitiveness","copy":"She is constantly talking to people, reading and on the lookout for new insights. She seeks out much more information than is required for her job.","info":"For each of the following descriptions of a \"person\", please indicate how much that person is or is not like you."},"question-2":{"id":13,"category":"creativity","copy":"Thinking up new ideas and being creative is important to him. He likes to do things in his own, unique way.","info":"For each of the following descriptions of a \"person\", please indicate how much that person is or is not like you."},"question-3":{"id":14,"category":"distress-tolerance","copy":"She approaches new experiences with courage. She does not shy away from the unknown or unfamiliar even if it seems scary.","info":"For each of the following descriptions of a \"person\", please indicate how much that person is or is not like you."},"question-4":{"id":15,"category":"openness","copy":"It is important to him to listen to people who are different than himself. Even when he disagrees with them, he still wants to understand them.","info":"For each of the following descriptions of a \"person\", please indicate how much that person is or is not like you."}},"answers":{"answer-1":"Not like me","answer-2":"Somewhat like me","answer-3":"Very much like me","answer-4":"Exactly like me"}}}}}
+	</script>
+
+<script src="/self-test/assets/js/vendor/greensock/easeljs-NEXT.min.js" style=""></script><script src="/self-test/assets/js/vendor/greensock/plugins/ThrowPropsPlugin.min.js" style=""></script><script src="/self-test/assets/js/three.js" style=""></script><script src="/self-test/assets/js/threex.rendererstats.js" style=""></script><script src="/self-test/assets/js/stats.min.js" style=""></script><script src="/self-test/assets/js/tunnel.js" style=""></script></head>
+<body>
+
+<div id="force-ff"><img src="/self-test/assets/images/force.png"></div>
+<div class="page">
+    <div id="webglcontainer"><canvas width="2446" height="1245" style="width: 2446px; height: 1245px; visibility: inherit; opacity: 1;"></canvas><div id="_stats" style="width: 80px; opacity: 0.9; cursor: pointer; position: absolute; bottom: 0px; right: 0px; z-index: 100; display: none;"><div id="fps" style="padding: 0px 0px 3px 3px; text-align: left; background-color: rgb(0, 0, 34);"><div id="fpsText" style="color: rgb(0, 255, 255); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">8 FPS (8-60)</div><div id="fpsGraph" style="position: relative; width: 74px; height: 30px; background-color: rgb(0, 255, 255);"><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 30px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 17.7px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 14.1px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12.3px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12.6px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12.9px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12.3px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 15.6px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12.3px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 12px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 15px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 27.3px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 24.9px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 25.5px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 17, 51);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 17, 51);"></span></div></div><div id="ms" style="padding: 0px 0px 3px 3px; text-align: left; background-color: rgb(0, 34, 0); display: none;"><div id="msText" style="color: rgb(0, 255, 0); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">147 MS (2-317)</div><div id="msGraph" style="position: relative; width: 74px; height: 30px; background-color: rgb(0, 255, 0);"><span style="width: 1px; height: 10.95px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.3px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 8.85px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.8px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.75px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.9px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.3px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.45px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 29.7px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 28.2px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.75px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.3px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.45px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 25.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.3px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.75px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 14.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.8px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.95px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.95px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 29.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.45px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 25.8px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 29.1px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.45px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.6px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.45px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 27.45px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 14.85px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.8px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.95px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.9px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.1px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.9px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.9px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.1px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.55px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 9.75px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.05px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.95px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 10.65px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.4px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.1px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.1px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.1px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 11.25px; float: left; background-color: rgb(17, 51, 17);"></span><span style="width: 1px; height: 7.95px; float: left; background-color: rgb(17, 51, 17);"></span></div></div></div><div style="width: 80px; opacity: 0.9; cursor: pointer; position: absolute; bottom: 0px; z-index: 100; display: none;"><div style="padding: 0px 0px 3px 3px; text-align: left; background-color: rgb(34, 0, 0);"><div style="color: rgb(255, 0, 0); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">WebGLRenderer</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">== Memory =====</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Programs: undefined</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Geometries: 28</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Textures: 5</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">== Render =====</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Calls: 3</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Vertices: 9108</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Faces: 3036</div><div style="color: rgb(255, 0, 0); background-color: rgb(51, 17, 17); font-family: Helvetica, Arial, sans-serif; font-size: 9px; font-weight: bold; line-height: 15px;">Points: 0</div></div></div></div>
+    <main id="main" class="isloading" style="visibility: inherit; opacity: 1;">
+        <div id="no-webgl-container" class="hidden">
+            <div class="background-current"></div>
+            <div class="background-next"></div>
+        </div>
+        <section id="sections">
+            <section id="individual-curiosity"></section>
+            <section id="self-assessment">
+                <div id="statement-multi" class="statement" style="display: none; transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);">
+                    <div class="background">
+                        <div class="background-top">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 90.25" preserveAspectRatio="xMaxYMax" fill="#ffc832">
+                                <path id="statement-bg-svg" class="cls-1" d="M1026.01,631.933a149.16,149.16,0,0,0-53.263-15.3L151.4,542.583C102.229,538.119,42.168,558.9,0,592.681c0.041,12.609,0,39.343,0,39.343S827.7,632.576,1026.01,631.933Z" transform="translate(0 -542)"></path>
+                            </svg>
+                        </div>
+                        <div class="background-bottom"></div>
+                    </div>
+                    <div class="center-container">
+                        <button class="prev-btn">
+                            <div class="arrow-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16.76" height="26.97" viewBox="0 0 16.76 26.97" fill="#333">
+                                    <path class="cls-1" d="M1129.2,2629.83c0.79-.8,9.83-10.63,9.83-10.63a4.093,4.093,0,0,1,3.1-1.17h2.52a0.618,0.618,0,0,1,.74.64v2.64a4.172,4.172,0,0,1-1.16,3.12l-4.78,4.7a3.376,3.376,0,0,0-1.1,2.43,3.5,3.5,0,0,0,1.1,2.49l4.78,4.7a4.156,4.156,0,0,1,1.16,3.12v2.48a0.622,0.622,0,0,1-.74.64h-2.36a4.093,4.093,0,0,1-3.1-1.17s-8.86-9.49-9.99-10.62A2.628,2.628,0,0,1,1129.2,2629.83Z" transform="translate(-1128.62 -2618.03)"></path>
+                                </svg>
+                            </div>
+                            <p>Previous</p>
+                        </button>
+                        <div class="flex-container">
+                            <div class="flex-top flex-item">
+                                <div class="content">
+                                    <button class="info-btn">
+                                        <svg class="info-btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.56 53.56" fill="#0f69af">
+                                            <path d="M9.94,9.56a25.91,25.91,0,0,0-7.8,19,25.68,25.68,0,0,0,7.8,18.88,8.73,8.73,0,0,0,3.44,2,8.92,8.92,0,0,0,2.56.4,6.63,6.63,0,0,0,6.6-6.47V43.27a1.32,1.32,0,0,1,1.51-1.43h0.1a1.37,1.37,0,0,0,1.45-1.49V29.28a1.37,1.37,0,0,0-1.45-1.49h-0.1a1.34,1.34,0,0,1-1.51-1.51v-2a1.33,1.33,0,0,1,1.51-1.49h6.58a1.31,1.31,0,0,1,1.47,1.49v16a1.38,1.38,0,0,0,1.47,1.49h0.19a1.32,1.32,0,0,1,1.49,1.49v2a1.32,1.32,0,0,1-1.49,1.49h-6.2a8,8,0,0,0-2.39.27,4.76,4.76,0,0,0-1.87,1.05,4.54,4.54,0,0,0-1.43,3.19A3.79,3.79,0,0,0,23,54a4.15,4.15,0,0,0,2.7,1.13q1.53,0.15,3.23.15a28,28,0,0,0,6.54-.75,25,25,0,0,0,3.23-1,26.32,26.32,0,0,0,9.1-6.1,25.55,25.55,0,0,0,7.88-18.88,25.78,25.78,0,0,0-7.88-19A25.57,25.57,0,0,0,28.93,1.72a26,26,0,0,0-19,7.84m21.94,4.74A4.73,4.73,0,0,1,27.15,19a4.7,4.7,0,0,1-4.74-4.69,4.73,4.73,0,0,1,4.74-4.72A4.51,4.51,0,0,1,30.46,11,4.54,4.54,0,0,1,31.88,14.31Z" transform="translate(-2.13 -1.72)"></path>
+                                        </svg>
+                                    </button>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="flex-bottom flex-item">
+                                <div class="checkbox-container">
+                                    <div class="checkbox-list">
+                                        <div id="cb1" data-index="0" data-value="0" class="checkbox-comp">
+                                            <svg class="background" xmlns="http://www.w3.org/2000/svg" width="96.5" height="96.5" viewBox="0 0 96.5 96.5" fill="#0f69af">
+                                                <path class="cls-1" d="M1379.91,2896.53l40.52-40.52a7.713,7.713,0,0,1,10.92,0l40.52,40.52a7.725,7.725,0,0,1,0,10.93l-40.52,40.52a7.732,7.732,0,0,1-10.92,0l-40.52-40.52A7.725,7.725,0,0,1,1379.91,2896.53Z" transform="translate(-1377.66 -2853.75)"></path>
+                                            </svg>
+                                            <div class="checkmark hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.03 194" fill="#1d1d1b">
+                                                    <path class="cls-1" d="M1879.61,943.26a30,30,0,0,1-23-10.79l-55-66A30,30,0,0,1,1847.63,828l28.23,33.87L1936,763.6a30,30,0,1,1,51.18,31.32l-82,134a30,30,0,0,1-23.4,14.26Q1880.7,943.26,1879.61,943.26Z" transform="translate(-1794.58 -749.25)"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox-dots">
+                                            <svg class="dots-5" xmlns="http://www.w3.org/2000/svg" width="97.5" height="10.21" viewBox="0 0 97.5 10.21" fill="#111">
+                                                <path class="cls-1" d="M1310.41,2900.7l3.25-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.25-3.26A1.847,1.847,0,0,1,1310.41,2900.7Zm-21.31,0,3.26-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.26-3.26A1.847,1.847,0,0,1,1289.1,2900.7Zm-22.3,0,3.26-3.25a1.835,1.835,0,0,1,2.6,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.835,1.835,0,0,1-2.6,0l-3.26-3.26A1.847,1.847,0,0,1,1266.8,2900.7Zm65,0,3.26-3.25a1.835,1.835,0,0,1,2.6,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.835,1.835,0,0,1-2.6,0l-3.26-3.26A1.847,1.847,0,0,1,1331.8,2900.7Zm22.3,0,3.26-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.26-3.26A1.847,1.847,0,0,1,1354.1,2900.7Z" transform="translate(-1266.28 -2896.91)"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="dots-3" width="70.56" height="14.18" viewBox="0 0 70.56 14.18">
+                                                <path class="cls-1" d="M1378.87,3796.2l4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1378.87,3796.2Zm-28.2,0,4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1350.67,3796.2Zm-28.2,0,4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1322.47,3796.2Z" transform="translate(-1321.72 -3790.91)"></path>
+                                            </svg>
+                                        </div>
+                                        <div id="cb2" data-index="1" data-value="1" class="checkbox-comp">
+                                            <svg class="background" xmlns="http://www.w3.org/2000/svg" width="96.5" height="96.5" viewBox="0 0 96.5 96.5" fill="#0f69af">
+                                                <path data-name="Abgerundetes Rechteck 6 Kopie" class="cls-1" d="M1379.91,2896.53l40.52-40.52a7.713,7.713,0,0,1,10.92,0l40.52,40.52a7.725,7.725,0,0,1,0,10.93l-40.52,40.52a7.732,7.732,0,0,1-10.92,0l-40.52-40.52A7.725,7.725,0,0,1,1379.91,2896.53Z" transform="translate(-1377.66 -2853.75)"></path>
+                                            </svg>
+                                            <div class="checkmark hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.03 194" fill="#1d1d1b">
+                                                    <path class="cls-1" d="M1879.61,943.26a30,30,0,0,1-23-10.79l-55-66A30,30,0,0,1,1847.63,828l28.23,33.87L1936,763.6a30,30,0,1,1,51.18,31.32l-82,134a30,30,0,0,1-23.4,14.26Q1880.7,943.26,1879.61,943.26Z" transform="translate(-1794.58 -749.25)"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox-dots">
+                                            <svg class="dots-5" xmlns="http://www.w3.org/2000/svg" width="97.5" height="10.21" viewBox="0 0 97.5 10.21" fill="#111">
+                                                <path class="cls-1" d="M1310.41,2900.7l3.25-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.25-3.26A1.847,1.847,0,0,1,1310.41,2900.7Zm-21.31,0,3.26-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.26-3.26A1.847,1.847,0,0,1,1289.1,2900.7Zm-22.3,0,3.26-3.25a1.835,1.835,0,0,1,2.6,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.835,1.835,0,0,1-2.6,0l-3.26-3.26A1.847,1.847,0,0,1,1266.8,2900.7Zm65,0,3.26-3.25a1.835,1.835,0,0,1,2.6,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.835,1.835,0,0,1-2.6,0l-3.26-3.26A1.847,1.847,0,0,1,1331.8,2900.7Zm22.3,0,3.26-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.26-3.26A1.847,1.847,0,0,1,1354.1,2900.7Z" transform="translate(-1266.28 -2896.91)"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="dots-3" width="70.56" height="14.18" viewBox="0 0 70.56 14.18">
+                                                <path class="cls-1" d="M1378.87,3796.2l4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1378.87,3796.2Zm-28.2,0,4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1350.67,3796.2Zm-28.2,0,4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1322.47,3796.2Z" transform="translate(-1321.72 -3790.91)"></path>
+                                            </svg>
+                                        </div>
+                                        <div id="cb3" data-index="2" data-value="2" class="checkbox-comp">
+                                            <svg class="background" xmlns="http://www.w3.org/2000/svg" width="96.5" height="96.5" viewBox="0 0 96.5 96.5" fill="#0f69af">
+                                                <path data-name="Abgerundetes Rechteck 6 Kopie" class="cls-1" d="M1379.91,2896.53l40.52-40.52a7.713,7.713,0,0,1,10.92,0l40.52,40.52a7.725,7.725,0,0,1,0,10.93l-40.52,40.52a7.732,7.732,0,0,1-10.92,0l-40.52-40.52A7.725,7.725,0,0,1,1379.91,2896.53Z" transform="translate(-1377.66 -2853.75)"></path>
+                                            </svg>
+                                            <div class="checkmark hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.03 194" fill="#1d1d1b">
+                                                    <path class="cls-1" d="M1879.61,943.26a30,30,0,0,1-23-10.79l-55-66A30,30,0,0,1,1847.63,828l28.23,33.87L1936,763.6a30,30,0,1,1,51.18,31.32l-82,134a30,30,0,0,1-23.4,14.26Q1880.7,943.26,1879.61,943.26Z" transform="translate(-1794.58 -749.25)"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox-dots">
+                                            <svg class="dots-5" xmlns="http://www.w3.org/2000/svg" width="97.5" height="10.21" viewBox="0 0 97.5 10.21" fill="#111">
+                                                <path class="cls-1" d="M1310.41,2900.7l3.25-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.25-3.26A1.847,1.847,0,0,1,1310.41,2900.7Zm-21.31,0,3.26-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.26-3.26A1.847,1.847,0,0,1,1289.1,2900.7Zm-22.3,0,3.26-3.25a1.835,1.835,0,0,1,2.6,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.835,1.835,0,0,1-2.6,0l-3.26-3.26A1.847,1.847,0,0,1,1266.8,2900.7Zm65,0,3.26-3.25a1.835,1.835,0,0,1,2.6,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.835,1.835,0,0,1-2.6,0l-3.26-3.26A1.847,1.847,0,0,1,1331.8,2900.7Zm22.3,0,3.26-3.25a1.847,1.847,0,0,1,2.61,0l3.26,3.25a1.847,1.847,0,0,1,0,2.61l-3.26,3.26a1.847,1.847,0,0,1-2.61,0l-3.26-3.26A1.847,1.847,0,0,1,1354.1,2900.7Z" transform="translate(-1266.28 -2896.91)"></path>
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="dots-3" width="70.56" height="14.18" viewBox="0 0 70.56 14.18">
+                                                <path class="cls-1" d="M1378.87,3796.2l4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1378.87,3796.2Zm-28.2,0,4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1350.67,3796.2Zm-28.2,0,4.53-4.53a2.559,2.559,0,0,1,3.62,0l4.52,4.53a2.559,2.559,0,0,1,0,3.62l-4.52,4.52a2.559,2.559,0,0,1-3.62,0l-4.53-4.52A2.559,2.559,0,0,1,1322.47,3796.2Z" transform="translate(-1321.72 -3790.91)"></path>
+                                            </svg>
+                                        </div>
+                                        <div id="cb4" data-index="3" data-value="3" class="checkbox-comp">
+                                            <svg class="background" xmlns="http://www.w3.org/2000/svg" width="96.5" height="96.5" viewBox="0 0 96.5 96.5" fill="#0f69af">
+                                                <path class="cls-1" d="M1379.91,2896.53l40.52-40.52a7.713,7.713,0,0,1,10.92,0l40.52,40.52a7.725,7.725,0,0,1,0,10.93l-40.52,40.52a7.732,7.732,0,0,1-10.92,0l-40.52-40.52A7.725,7.725,0,0,1,1379.91,2896.53Z" transform="translate(-1377.66 -2853.75)"></path>
+                                            </svg>
+                                            <div class="checkmark hidden">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.03 194" fill="#1d1d1b">
+                                                    <path class="cls-1" d="M1879.61,943.26a30,30,0,0,1-23-10.79l-55-66A30,30,0,0,1,1847.63,828l28.23,33.87L1936,763.6a30,30,0,1,1,51.18,31.32l-82,134a30,30,0,0,1-23.4,14.26Q1880.7,943.26,1879.61,943.26Z" transform="translate(-1794.58 -749.25)"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox-labels">
+                                        <div class="checkbox-label-left checkbox-label">Strongly disagree</div>
+                                        <div class="checkbox-label-right checkbox-label">Strongly agree</div>
+                                    </div>
+                                </div>
+                                <div class="slider-container">
+                                    <div class="flex-top flex-item">
+                                        <div class="center-container">
+                                            <div class="slider">
+                                                <div class="bar">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="603.59" height="27.35" viewBox="0 0 603.59 27.35" fill="#0f69af">
+                                                        <g id="Slidebar" class="cls-1">
+                                                            <path d="M1812.02,2957.69h-4.32s5.23-.4,7.2-4.32C1814.9,2953.94,1812.02,2957.69,1812.02,2957.69Zm0,4.32h-4.32s5.95,0.41,7.92,4.32C1815.62,2965.76,1812.02,2962.01,1812.02,2962.01Z" transform="translate(-1234.69 -2945.81)"></path>
+                                                            <path d="M1260.96,2957.69h4.32s-5.22-.4-7.2-4.32C1258.08,2953.94,1260.96,2957.69,1260.96,2957.69Zm0,4.32h4.32s-5.94.41-7.92,4.32C1257.36,2965.76,1260.96,2962.01,1260.96,2962.01Z" transform="translate(-1234.69 -2945.81)"></path>
+                                                            <path d="M1259.85,2958.15h553.8v3.6h-553.8v-3.6Z" transform="translate(-1234.69 -2945.81)"></path>
+                                                            <path d="M1827.53,2947.01l9.52,9.53a4.14,4.14,0,0,1,0,5.86l-9.52,9.52a4.14,4.14,0,0,1-5.86,0l-9.53-9.52a4.159,4.159,0,0,1,0-5.86l9.53-9.53A4.159,4.159,0,0,1,1827.53,2947.01Z" transform="translate(-1234.69 -2945.81)"></path>
+                                                            <path d="M1251.27,2947.01l9.52,9.53a4.14,4.14,0,0,1,0,5.86l-9.52,9.52a4.14,4.14,0,0,1-5.86,0l-9.52-9.52a4.14,4.14,0,0,1,0-5.86l9.52-9.53A4.159,4.159,0,0,1,1251.27,2947.01Z" transform="translate(-1234.69 -2945.81)"></path>
+                                                        </g>
+                                                    </svg>
+                                                </div>
+                                                <div class="dragger">
+                                                    <svg class="advice" xmlns="http://www.w3.org/2000/svg" width="146.21" height="24.24" viewBox="0 0 146.21 24.24">
+                                                        <path class="cls-1" d="M1463.44,2990.99c0.71-.71,8.84-9.56,8.84-9.56a3.679,3.679,0,0,1,2.79-1.05h2.27a0.551,0.551,0,0,1,.66.57v2.38a3.757,3.757,0,0,1-1.04,2.81l-4.3,4.23a3.04,3.04,0,0,0-.99,2.19,3.108,3.108,0,0,0,.99,2.23l4.3,4.24a3.719,3.719,0,0,1,1.04,2.8v2.24a0.551,0.551,0,0,1-.66.57h-2.13a3.679,3.679,0,0,1-2.79-1.05s-7.97-8.54-8.98-9.56A2.371,2.371,0,0,1,1463.44,2990.99Z" transform="translate(-1462.91 -2980.38)"></path>
+                                                        <path class="cls-1" d="M1608.57,2990.99c-0.71-.71-8.85-9.56-8.85-9.56a3.65,3.65,0,0,0-2.79-1.05h-2.26a0.559,0.559,0,0,0-.67.57v2.38a3.757,3.757,0,0,0,1.04,2.81l4.31,4.23a3.04,3.04,0,0,1,.99,2.19,3.108,3.108,0,0,1-.99,2.23l-4.31,4.24a3.719,3.719,0,0,0-1.04,2.8v2.24a0.559,0.559,0,0,0,.67.57h2.12a3.664,3.664,0,0,0,2.79-1.05s7.97-8.54,8.99-9.56A2.371,2.371,0,0,0,1608.57,2990.99Z" transform="translate(-1462.91 -2980.38)"></path>
+                                                    </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="69.82" height="92.15" viewBox="0 0 69.82 92.15">
+                                                        <path class="background" fill="#ffeeee" d="M1562.9,2979.82c-0.87,1.56-1.88,3.19-3.07,4.92-6.54,9.5-15.4,21.52-20.67,28.43-2.99,3.92-5.76,3.8-8.61.02-5.27-6.99-14.36-19.08-21.24-28.48a31.112,31.112,0,0,1-2.29-3.65A34.925,34.925,0,1,1,1562.9,2979.82Z" transform="translate(-1499.59 -2923.91)"></path>
+                                                        <path class="dot" fill="#333333" d="M1537.71,2947.08l9.27,9.27a4.038,4.038,0,0,1,0,5.7l-9.27,9.27a4.038,4.038,0,0,1-5.7,0l-9.27-9.27a4.038,4.038,0,0,1,0-5.7l9.27-9.27A4.038,4.038,0,0,1,1537.71,2947.08Z" transform="translate(-1499.59 -2923.91)"></path>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slider-labels">
+                                        <div class="center-container">
+                                            <div class="slider-label-left slider-label">Not like me</div>
+                                            <div class="slider-scale">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="322.65" height="8.66" viewBox="0 0 322.65 8.66">
+                                                    <path d="M1482.7,3040.57a4.32,4.32,0,1,1-4.31,4.32A4.321,4.321,0,0,1,1482.7,3040.57Zm-36,1.89a2.43,2.43,0,1,1-2.43,2.43A2.435,2.435,0,0,1,1446.7,3042.46Zm-32.81,0a2.43,2.43,0,1,1-2.43,2.43A2.433,2.433,0,0,1,1413.89,3042.46Zm104.81,0a2.43,2.43,0,1,1-2.43,2.43A2.435,2.435,0,0,1,1518.7,3042.46Zm69.6-1.89a4.32,4.32,0,1,1-4.32,4.32A4.319,4.319,0,0,1,1588.3,3040.57Zm-36,1.89a2.43,2.43,0,1,1-2.44,2.43A2.433,2.433,0,0,1,1552.3,3042.46Zm72,0a2.43,2.43,0,1,1-2.44,2.43A2.433,2.433,0,0,1,1624.3,3042.46Zm32.81,0a2.43,2.43,0,1,1-2.43,2.43A2.433,2.433,0,0,1,1657.11,3042.46Zm-278.81-1.89a4.32,4.32,0,1,1-4.32,4.32A4.319,4.319,0,0,1,1378.3,3040.57Zm314,0a4.32,4.32,0,1,1-4.32,4.32A4.319,4.319,0,0,1,1692.3,3040.57Z" transform="translate(-1373.97 -3040.56)"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="slider-label-right slider-label">Exactly like me</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="demography">
+                <div id="statement-country" class="statement" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);">
+                    <div class="center-container">
+                        <div class="flex-container">
+                            <div class="flex-top flex-item">
+                                <div class="content">
+                                    <button class="info-btn">
+                                        <svg class="info-btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.56 53.56" fill="#0f69af">
+                                            <path d="M9.94,9.56a25.91,25.91,0,0,0-7.8,19,25.68,25.68,0,0,0,7.8,18.88,8.73,8.73,0,0,0,3.44,2,8.92,8.92,0,0,0,2.56.4,6.63,6.63,0,0,0,6.6-6.47V43.27a1.32,1.32,0,0,1,1.51-1.43h0.1a1.37,1.37,0,0,0,1.45-1.49V29.28a1.37,1.37,0,0,0-1.45-1.49h-0.1a1.34,1.34,0,0,1-1.51-1.51v-2a1.33,1.33,0,0,1,1.51-1.49h6.58a1.31,1.31,0,0,1,1.47,1.49v16a1.38,1.38,0,0,0,1.47,1.49h0.19a1.32,1.32,0,0,1,1.49,1.49v2a1.32,1.32,0,0,1-1.49,1.49h-6.2a8,8,0,0,0-2.39.27,4.76,4.76,0,0,0-1.87,1.05,4.54,4.54,0,0,0-1.43,3.19A3.79,3.79,0,0,0,23,54a4.15,4.15,0,0,0,2.7,1.13q1.53,0.15,3.23.15a28,28,0,0,0,6.54-.75,25,25,0,0,0,3.23-1,26.32,26.32,0,0,0,9.1-6.1,25.55,25.55,0,0,0,7.88-18.88,25.78,25.78,0,0,0-7.88-19A25.57,25.57,0,0,0,28.93,1.72a26,26,0,0,0-19,7.84m21.94,4.74A4.73,4.73,0,0,1,27.15,19a4.7,4.7,0,0,1-4.74-4.69,4.73,4.73,0,0,1,4.74-4.72A4.51,4.51,0,0,1,30.46,11,4.54,4.54,0,0,1,31.88,14.31Z" transform="translate(-2.13 -1.72)"></path>
+                                        </svg>
+                                    </button>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="flex-bottom flex-item">
+                                <div class="dropdown-container">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle">Select country</button>
+                                        <div class="dropdown-menu"><div data-value="AF" class="dropdown-item">Afghanistan</div><div data-value="AX" class="dropdown-item">Åland</div><div data-value="AL" class="dropdown-item">Albania</div><div data-value="DZ" class="dropdown-item">Algeria</div><div data-value="AS" class="dropdown-item">American Samoa</div><div data-value="AD" class="dropdown-item">Andorra</div><div data-value="AO" class="dropdown-item">Angola</div><div data-value="AI" class="dropdown-item">Anguilla</div><div data-value="AQ" class="dropdown-item">Antarctica</div><div data-value="AG" class="dropdown-item">Antigua and Barbuda</div><div data-value="AR" class="dropdown-item">Argentina</div><div data-value="AM" class="dropdown-item">Armenia</div><div data-value="AW" class="dropdown-item">Aruba</div><div data-value="AU" class="dropdown-item">Australia</div><div data-value="AT" class="dropdown-item">Austria</div><div data-value="AZ" class="dropdown-item">Azerbaijan</div><div data-value="BS" class="dropdown-item">Bahamas</div><div data-value="BH" class="dropdown-item">Bahrain</div><div data-value="BD" class="dropdown-item">Bangladesh</div><div data-value="BB" class="dropdown-item">Barbados</div><div data-value="BY" class="dropdown-item">Belarus</div><div data-value="BE" class="dropdown-item">Belgium</div><div data-value="BZ" class="dropdown-item">Belize</div><div data-value="BJ" class="dropdown-item">Benin</div><div data-value="BM" class="dropdown-item">Bermuda</div><div data-value="BT" class="dropdown-item">Bhutan</div><div data-value="BO" class="dropdown-item">Bolivia</div><div data-value="BA" class="dropdown-item">Bosnia and Herzegovina</div><div data-value="BW" class="dropdown-item">Botswana</div><div data-value="BV" class="dropdown-item">Bouvet Island</div><div data-value="BR" class="dropdown-item">Brazil</div><div data-value="IO" class="dropdown-item">British Indian Ocean Territory</div><div data-value="VG" class="dropdown-item">British Virgin Islands</div><div data-value="BN" class="dropdown-item">Brunei Darussalam</div><div data-value="BG" class="dropdown-item">Bulgaria</div><div data-value="BF" class="dropdown-item">Burkina Faso</div><div data-value="BI" class="dropdown-item">Burundi</div><div data-value="KH" class="dropdown-item">Cambodia</div><div data-value="CM" class="dropdown-item">Cameroon</div><div data-value="CA" class="dropdown-item">Canada</div><div data-value="CV" class="dropdown-item">Cape Verde</div><div data-value="KY" class="dropdown-item">Cayman Islands</div><div data-value="CF" class="dropdown-item">Central African Republic</div><div data-value="TD" class="dropdown-item">Chad</div><div data-value="CL" class="dropdown-item">Chile</div><div data-value="CN" class="dropdown-item">China</div><div data-value="CX" class="dropdown-item">Christmas Island</div><div data-value="CC" class="dropdown-item">Cocos (Keeling) Islands</div><div data-value="CO" class="dropdown-item">Colombia</div><div data-value="KM" class="dropdown-item">Comoros</div><div data-value="CG" class="dropdown-item">Congo</div><div data-value="CK" class="dropdown-item">Cook Islands</div><div data-value="CR" class="dropdown-item">Costa Rica</div><div data-value="HR" class="dropdown-item">Croatia</div><div data-value="CU" class="dropdown-item">Cuba</div><div data-value="CW" class="dropdown-item">Curaçao</div><div data-value="CY" class="dropdown-item">Cyprus</div><div data-value="CZ" class="dropdown-item">Czech Republic</div><div data-value="CD" class="dropdown-item">Democratic Republic of the Congo</div><div data-value="DK" class="dropdown-item">Denmark</div><div data-value="DJ" class="dropdown-item">Djibouti</div><div data-value="DM" class="dropdown-item">Dominica</div><div data-value="DO" class="dropdown-item">Dominican Republic</div><div data-value="EC" class="dropdown-item">Ecuador</div><div data-value="EG" class="dropdown-item">Egypt</div><div data-value="SV" class="dropdown-item">El Salvador</div><div data-value="GQ" class="dropdown-item">Equatorial Guinea</div><div data-value="ER" class="dropdown-item">Eritrea</div><div data-value="EE" class="dropdown-item">Estonia</div><div data-value="ET" class="dropdown-item">Ethiopia</div><div data-value="FK" class="dropdown-item">Falkland Islands (Malvinas)</div><div data-value="FO" class="dropdown-item">Faroe Islands</div><div data-value="FM" class="dropdown-item">Federated States of Micronesia</div><div data-value="FJ" class="dropdown-item">Fiji</div><div data-value="FI" class="dropdown-item">Finland</div><div data-value="FR" class="dropdown-item">France</div><div data-value="GF" class="dropdown-item">French Guiana</div><div data-value="PF" class="dropdown-item">French Polynesia</div><div data-value="TF" class="dropdown-item">French Southern Territories</div><div data-value="GA" class="dropdown-item">Gabon</div><div data-value="GM" class="dropdown-item">Gambia</div><div data-value="GE" class="dropdown-item">Georgia</div><div data-value="DE" class="dropdown-item">Germany</div><div data-value="GH" class="dropdown-item">Ghana</div><div data-value="GI" class="dropdown-item">Gibraltar</div><div data-value="GR" class="dropdown-item">Greece</div><div data-value="GL" class="dropdown-item">Greenland</div><div data-value="GD" class="dropdown-item">Grenada</div><div data-value="GP" class="dropdown-item">Guadeloupe</div><div data-value="GU" class="dropdown-item">Guam</div><div data-value="GT" class="dropdown-item">Guatemala</div><div data-value="GG" class="dropdown-item">Guernsey</div><div data-value="GN" class="dropdown-item">Guinea</div><div data-value="GW" class="dropdown-item">Guinea-Bissau</div><div data-value="GY" class="dropdown-item">Guyana</div><div data-value="HT" class="dropdown-item">Haiti</div><div data-value="HM" class="dropdown-item">Heard Island and McDonald Mcdonald Islands</div><div data-value="VA" class="dropdown-item">Holy See (Vatican City State)</div><div data-value="HN" class="dropdown-item">Honduras</div><div data-value="HK" class="dropdown-item">Hong Kong</div><div data-value="HU" class="dropdown-item">Hungary</div><div data-value="IS" class="dropdown-item">Iceland</div><div data-value="IN" class="dropdown-item">India</div><div data-value="ID" class="dropdown-item">Indonesia</div><div data-value="IR" class="dropdown-item">Iran, Islamic Republic of</div><div data-value="IQ" class="dropdown-item">Iraq</div><div data-value="IE" class="dropdown-item">Ireland</div><div data-value="IM" class="dropdown-item">Isle of Man</div><div data-value="IL" class="dropdown-item">Israel</div><div data-value="IT" class="dropdown-item">Italy</div><div data-value="JM" class="dropdown-item">Jamaica</div><div data-value="JP" class="dropdown-item">Japan</div><div data-value="JE" class="dropdown-item">Jersey</div><div data-value="JO" class="dropdown-item">Jordan</div><div data-value="KZ" class="dropdown-item">Kazakhstan</div><div data-value="KE" class="dropdown-item">Kenya</div><div data-value="KI" class="dropdown-item">Kiribati</div><div data-value="KP" class="dropdown-item">Korea, Democratic People's Republic of</div><div data-value="KR" class="dropdown-item">Korea, Republic of</div><div data-value="XK" class="dropdown-item">Kosovo</div><div data-value="KW" class="dropdown-item">Kuwait</div><div data-value="KG" class="dropdown-item">Kyrgyzstan</div><div data-value="LA" class="dropdown-item">Lao People's Democratic Republic</div><div data-value="LV" class="dropdown-item">Latvia</div><div data-value="LB" class="dropdown-item">Lebanon</div><div data-value="LS" class="dropdown-item">Lesotho</div><div data-value="LR" class="dropdown-item">Liberia</div><div data-value="LY" class="dropdown-item">Libya</div><div data-value="LI" class="dropdown-item">Liechtenstein</div><div data-value="LT" class="dropdown-item">Lithuania</div><div data-value="LU" class="dropdown-item">Luxembourg</div><div data-value="MO" class="dropdown-item">Macao</div><div data-value="MK" class="dropdown-item">Macedonia, the Former Yugoslav Republic of</div><div data-value="MG" class="dropdown-item">Madagascar</div><div data-value="MW" class="dropdown-item">Malawi</div><div data-value="MY" class="dropdown-item">Malaysia</div><div data-value="MV" class="dropdown-item">Maldives</div><div data-value="ML" class="dropdown-item">Mali</div><div data-value="MT" class="dropdown-item">Malta</div><div data-value="MH" class="dropdown-item">Marshall Islands</div><div data-value="MQ" class="dropdown-item">Martinique</div><div data-value="MR" class="dropdown-item">Mauritania</div><div data-value="MU" class="dropdown-item">Mauritius</div><div data-value="YT" class="dropdown-item">Mayotte</div><div data-value="MX" class="dropdown-item">Mexico</div><div data-value="MD" class="dropdown-item">Moldova, Republic of</div><div data-value="MC" class="dropdown-item">Monaco</div><div data-value="MN" class="dropdown-item">Mongolia</div><div data-value="ME" class="dropdown-item">Montenegro</div><div data-value="MS" class="dropdown-item">Montserrat</div><div data-value="MA" class="dropdown-item">Morocco</div><div data-value="MZ" class="dropdown-item">Mozambique</div><div data-value="MM" class="dropdown-item">Myanmar</div><div data-value="NA" class="dropdown-item">Namibia</div><div data-value="NR" class="dropdown-item">Nauru</div><div data-value="NP" class="dropdown-item">Nepal</div><div data-value="NL" class="dropdown-item">Netherlands</div><div data-value="NC" class="dropdown-item">New Caledonia</div><div data-value="NZ" class="dropdown-item">New Zealand</div><div data-value="NI" class="dropdown-item">Nicaragua</div><div data-value="NE" class="dropdown-item">Niger</div><div data-value="NG" class="dropdown-item">Nigeria</div><div data-value="NU" class="dropdown-item">Niue</div><div data-value="NF" class="dropdown-item">Norfolk Island</div><div data-value="MP" class="dropdown-item">Northern Mariana Islands</div><div data-value="NO" class="dropdown-item">Norway</div><div data-value="OM" class="dropdown-item">Oman</div><div data-value="PK" class="dropdown-item">Pakistan</div><div data-value="PW" class="dropdown-item">Palau</div><div data-value="PS" class="dropdown-item">Palestine, State of</div><div data-value="PA" class="dropdown-item">Panama</div><div data-value="PG" class="dropdown-item">Papua New Guinea</div><div data-value="PY" class="dropdown-item">Paraguay</div><div data-value="PE" class="dropdown-item">Peru</div><div data-value="PH" class="dropdown-item">Philippines</div><div data-value="PN" class="dropdown-item">Pitcairn</div><div data-value="PL" class="dropdown-item">Poland</div><div data-value="PT" class="dropdown-item">Portugal</div><div data-value="PR" class="dropdown-item">Puerto Rico</div><div data-value="QA" class="dropdown-item">Qatar</div><div data-value="CI" class="dropdown-item">Republic of the Ivory Coast</div><div data-value="RE" class="dropdown-item">Reunion</div><div data-value="RO" class="dropdown-item">Romania</div><div data-value="RU" class="dropdown-item">Russia</div><div data-value="RW" class="dropdown-item">Rwanda</div><div data-value="BL" class="dropdown-item">Saint Barthelemy</div><div data-value="KN" class="dropdown-item">Saint Kitts and Nevis</div><div data-value="LC" class="dropdown-item">Saint Lucia</div><div data-value="MF" class="dropdown-item">Saint Martin</div><div data-value="PM" class="dropdown-item">Saint Pierre and Miquelon</div><div data-value="VC" class="dropdown-item">Saint Vincent and the Grenadines</div><div data-value="WS" class="dropdown-item">Samoa</div><div data-value="SM" class="dropdown-item">San Marino</div><div data-value="ST" class="dropdown-item">Sao Tome and Principe</div><div data-value="SA" class="dropdown-item">Saudi Arabia</div><div data-value="SN" class="dropdown-item">Senegal</div><div data-value="RS" class="dropdown-item">Serbia</div><div data-value="SC" class="dropdown-item">Seychelles</div><div data-value="SL" class="dropdown-item">Sierra Leone</div><div data-value="SG" class="dropdown-item">Singapore</div><div data-value="SX" class="dropdown-item">Sint Maarten</div><div data-value="SK" class="dropdown-item">Slovakia</div><div data-value="SI" class="dropdown-item">Slovenia</div><div data-value="SB" class="dropdown-item">Solomon Islands</div><div data-value="SO" class="dropdown-item">Somalia</div><div data-value="ZA" class="dropdown-item">South Africa</div><div data-value="GS" class="dropdown-item">South Georgia and the South Sandwich Islands</div><div data-value="SS" class="dropdown-item">South Sudan</div><div data-value="ES" class="dropdown-item">Spain</div><div data-value="LK" class="dropdown-item">Sri Lanka</div><div data-value="SD" class="dropdown-item">Sudan</div><div data-value="SR" class="dropdown-item">Suriname</div><div data-value="SJ" class="dropdown-item">Svalbard and Jan Mayen</div><div data-value="SZ" class="dropdown-item">Swaziland</div><div data-value="SE" class="dropdown-item">Sweden</div><div data-value="CH" class="dropdown-item">Switzerland</div><div data-value="SY" class="dropdown-item">Syrian Arab Republic</div><div data-value="TW" class="dropdown-item">Taiwan</div><div data-value="TJ" class="dropdown-item">Tajikistan</div><div data-value="TH" class="dropdown-item">Thailand</div><div data-value="TL" class="dropdown-item">Timor-Leste</div><div data-value="TG" class="dropdown-item">Togo</div><div data-value="TK" class="dropdown-item">Tokelau</div><div data-value="TO" class="dropdown-item">Tonga</div><div data-value="TT" class="dropdown-item">Trinidad and Tobago</div><div data-value="TN" class="dropdown-item">Tunisia</div><div data-value="TR" class="dropdown-item">Turkey</div><div data-value="TM" class="dropdown-item">Turkmenistan</div><div data-value="TC" class="dropdown-item">Turks and Caicos Islands</div><div data-value="TV" class="dropdown-item">Tuvalu</div><div data-value="VI" class="dropdown-item">US Virgin Islands</div><div data-value="UG" class="dropdown-item">Uganda</div><div data-value="UA" class="dropdown-item">Ukraine</div><div data-value="AE" class="dropdown-item">United Arab Emirates</div><div data-value="GB" class="dropdown-item">United Kingdom</div><div data-value="TZ" class="dropdown-item">United Republic of Tanzania</div><div data-value="UM" class="dropdown-item">United States Minor Outlying Islands</div><div data-value="US" class="dropdown-item">United States Of America</div><div data-value="UY" class="dropdown-item">Uruguay</div><div data-value="UZ" class="dropdown-item">Uzbekistan</div><div data-value="VU" class="dropdown-item">Vanuatu</div><div data-value="VE" class="dropdown-item">Venezuela</div><div data-value="VN" class="dropdown-item">Vietnam</div><div data-value="WF" class="dropdown-item">Wallis and Futuna</div><div data-value="EH" class="dropdown-item">Western Sahara</div><div data-value="YE" class="dropdown-item">Yemen</div><div data-value="ZM" class="dropdown-item">Zambia</div><div data-value="ZW" class="dropdown-item">Zimbabwe</div></div>
+                                    </div>
+                                    <div class="dropdown-mobile" style="display: none;">
+                                        <select class="select">
+                                            <option value="" disabled="" selected=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="statement-work-sector" class="statement" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);">
+                    <div class="center-container">
+                        <div class="flex-container">
+                            <div class="flex-top flex-item">
+                                <div class="content">
+                                    <button class="info-btn">
+                                        <svg class="info-btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.56 53.56" fill="#0f69af">
+                                            <path d="M9.94,9.56a25.91,25.91,0,0,0-7.8,19,25.68,25.68,0,0,0,7.8,18.88,8.73,8.73,0,0,0,3.44,2,8.92,8.92,0,0,0,2.56.4,6.63,6.63,0,0,0,6.6-6.47V43.27a1.32,1.32,0,0,1,1.51-1.43h0.1a1.37,1.37,0,0,0,1.45-1.49V29.28a1.37,1.37,0,0,0-1.45-1.49h-0.1a1.34,1.34,0,0,1-1.51-1.51v-2a1.33,1.33,0,0,1,1.51-1.49h6.58a1.31,1.31,0,0,1,1.47,1.49v16a1.38,1.38,0,0,0,1.47,1.49h0.19a1.32,1.32,0,0,1,1.49,1.49v2a1.32,1.32,0,0,1-1.49,1.49h-6.2a8,8,0,0,0-2.39.27,4.76,4.76,0,0,0-1.87,1.05,4.54,4.54,0,0,0-1.43,3.19A3.79,3.79,0,0,0,23,54a4.15,4.15,0,0,0,2.7,1.13q1.53,0.15,3.23.15a28,28,0,0,0,6.54-.75,25,25,0,0,0,3.23-1,26.32,26.32,0,0,0,9.1-6.1,25.55,25.55,0,0,0,7.88-18.88,25.78,25.78,0,0,0-7.88-19A25.57,25.57,0,0,0,28.93,1.72a26,26,0,0,0-19,7.84m21.94,4.74A4.73,4.73,0,0,1,27.15,19a4.7,4.7,0,0,1-4.74-4.69,4.73,4.73,0,0,1,4.74-4.72A4.51,4.51,0,0,1,30.46,11,4.54,4.54,0,0,1,31.88,14.31Z" transform="translate(-2.13 -1.72)"></path>
+                                        </svg>
+                                    </button>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="flex-bottom flex-item">
+                                <div class="dropdown-container">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle">Your working sector</button>
+                                        <div class="dropdown-menu">
+                                        <div data-value="consumer-services" class="dropdown-item">Consumer Services</div><div data-value="consumer-goods" class="dropdown-item">Consumer Goods</div><div data-value="financials" class="dropdown-item">Financials</div><div data-value="education" class="dropdown-item">Education</div><div data-value="healthcare-and-pharmaceuticals" class="dropdown-item">Healthcare and Pharmaceuticals</div><div data-value="computers-and-electronics" class="dropdown-item">Computers and Electronics</div><div data-value="engineering" class="dropdown-item">Engineering</div><div data-value="other" class="dropdown-item">Other</div></div>
+                                    </div>
+                                    <div class="dropdown-mobile" style="display: none;">
+                                        <select class="select">
+                                            <option value="" disabled="" selected="">Your working sector</option>
+                                        <option value="consumer-services">Consumer Services</option><option value="consumer-goods">Consumer Goods</option><option value="financials">Financials</option><option value="education">Education</option><option value="healthcare-and-pharmaceuticals">Healthcare and Pharmaceuticals</option><option value="computers-and-electronics">Computers and Electronics</option><option value="engineering">Engineering</option><option value="other">Other</option></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="statement-age" class="statement" style="transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);">
+                    <div class="center-container">
+                        <div class="flex-container">
+                            <div class="flex-top flex-item">
+                                <div class="content">
+                                    <button class="info-btn">
+                                        <svg class="info-btn-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.56 53.56" fill="#0f69af">
+                                            <path d="M9.94,9.56a25.91,25.91,0,0,0-7.8,19,25.68,25.68,0,0,0,7.8,18.88,8.73,8.73,0,0,0,3.44,2,8.92,8.92,0,0,0,2.56.4,6.63,6.63,0,0,0,6.6-6.47V43.27a1.32,1.32,0,0,1,1.51-1.43h0.1a1.37,1.37,0,0,0,1.45-1.49V29.28a1.37,1.37,0,0,0-1.45-1.49h-0.1a1.34,1.34,0,0,1-1.51-1.51v-2a1.33,1.33,0,0,1,1.51-1.49h6.58a1.31,1.31,0,0,1,1.47,1.49v16a1.38,1.38,0,0,0,1.47,1.49h0.19a1.32,1.32,0,0,1,1.49,1.49v2a1.32,1.32,0,0,1-1.49,1.49h-6.2a8,8,0,0,0-2.39.27,4.76,4.76,0,0,0-1.87,1.05,4.54,4.54,0,0,0-1.43,3.19A3.79,3.79,0,0,0,23,54a4.15,4.15,0,0,0,2.7,1.13q1.53,0.15,3.23.15a28,28,0,0,0,6.54-.75,25,25,0,0,0,3.23-1,26.32,26.32,0,0,0,9.1-6.1,25.55,25.55,0,0,0,7.88-18.88,25.78,25.78,0,0,0-7.88-19A25.57,25.57,0,0,0,28.93,1.72a26,26,0,0,0-19,7.84m21.94,4.74A4.73,4.73,0,0,1,27.15,19a4.7,4.7,0,0,1-4.74-4.69,4.73,4.73,0,0,1,4.74-4.72A4.51,4.51,0,0,1,30.46,11,4.54,4.54,0,0,1,31.88,14.31Z" transform="translate(-2.13 -1.72)"></path>
+                                        </svg>
+                                    </button>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="flex-bottom flex-item">
+                                <div class="dropdown-container">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle">Select year</button>
+                                        <div class="dropdown-menu">
+                                            <div data-value="2006" class="dropdown-item">2006</div>
+                                            <div data-value="2005" class="dropdown-item">2005</div>
+                                            <div data-value="2004" class="dropdown-item">2004</div>
+                                            <div data-value="2003" class="dropdown-item">2003</div>
+                                            <div data-value="2002" class="dropdown-item">2002</div>
+                                            <div data-value="2001" class="dropdown-item">2001</div>
+                                            <div data-value="2000" class="dropdown-item">2000</div>
+                                            <div data-value="1999" class="dropdown-item">1999</div>
+                                            <div data-value="1998" class="dropdown-item">1998</div>
+                                            <div data-value="1997" class="dropdown-item">1997</div>
+                                            <div data-value="1996" class="dropdown-item">1996</div>
+                                            <div data-value="1995" class="dropdown-item">1995</div>
+                                            <div data-value="1994" class="dropdown-item">1994</div>
+                                            <div data-value="1993" class="dropdown-item">1993</div>
+                                            <div data-value="1992" class="dropdown-item">1992</div>
+                                            <div data-value="1991" class="dropdown-item">1991</div>
+                                            <div data-value="1990" class="dropdown-item">1990</div>
+                                            <div data-value="1989" class="dropdown-item">1989</div>
+                                            <div data-value="1988" class="dropdown-item">1988</div>
+                                            <div data-value="1987" class="dropdown-item">1987</div>
+                                            <div data-value="1986" class="dropdown-item">1986</div>
+                                            <div data-value="1985" class="dropdown-item">1985</div>
+                                            <div data-value="1984" class="dropdown-item">1984</div>
+                                            <div data-value="1983" class="dropdown-item">1983</div>
+                                            <div data-value="1982" class="dropdown-item">1982</div>
+                                            <div data-value="1981" class="dropdown-item">1981</div>
+                                            <div data-value="1980" class="dropdown-item">1980</div>
+                                            <div data-value="1979" class="dropdown-item">1979</div>
+                                            <div data-value="1978" class="dropdown-item">1978</div>
+                                            <div data-value="1977" class="dropdown-item">1977</div>
+                                            <div data-value="1976" class="dropdown-item">1976</div>
+                                            <div data-value="1975" class="dropdown-item">1975</div>
+                                            <div data-value="1974" class="dropdown-item">1974</div>
+                                            <div data-value="1973" class="dropdown-item">1973</div>
+                                            <div data-value="1972" class="dropdown-item">1972</div>
+                                            <div data-value="1971" class="dropdown-item">1971</div>
+                                            <div data-value="1970" class="dropdown-item">1970</div>
+                                            <div data-value="1969" class="dropdown-item">1969</div>
+                                            <div data-value="1968" class="dropdown-item">1968</div>
+                                            <div data-value="1967" class="dropdown-item">1967</div>
+                                            <div data-value="1966" class="dropdown-item">1966</div>
+                                            <div data-value="1965" class="dropdown-item">1965</div>
+                                            <div data-value="1964" class="dropdown-item">1964</div>
+                                            <div data-value="1963" class="dropdown-item">1963</div>
+                                            <div data-value="1962" class="dropdown-item">1962</div>
+                                            <div data-value="1961" class="dropdown-item">1961</div>
+                                            <div data-value="1960" class="dropdown-item">1960</div>
+                                            <div data-value="1959" class="dropdown-item">1959</div>
+                                            <div data-value="1958" class="dropdown-item">1958</div>
+                                            <div data-value="1957" class="dropdown-item">1957</div>
+                                            <div data-value="1956" class="dropdown-item">1956</div>
+                                            <div data-value="1955" class="dropdown-item">1955</div>
+                                            <div data-value="1954" class="dropdown-item">1954</div>
+                                            <div data-value="1953" class="dropdown-item">1953</div>
+                                            <div data-value="1952" class="dropdown-item">1952</div>
+                                            <div data-value="1951" class="dropdown-item">1951</div>
+                                            <div data-value="1950" class="dropdown-item">1950</div>
+                                            <div data-value="1949" class="dropdown-item">1949</div>
+                                            <div data-value="1948" class="dropdown-item">1948</div>
+                                            <div data-value="1947" class="dropdown-item">1947</div>
+                                            <div data-value="1946" class="dropdown-item">1946</div>
+                                            <div data-value="1945" class="dropdown-item">1945</div>
+                                            <div data-value="1944" class="dropdown-item">1944</div>
+                                            <div data-value="1943" class="dropdown-item">1943</div>
+                                            <div data-value="1942" class="dropdown-item">1942</div>
+                                            <div data-value="1941" class="dropdown-item">1941</div>
+                                            <div data-value="1940" class="dropdown-item">1940</div>
+                                            <div data-value="1939" class="dropdown-item">1939</div>
+                                            <div data-value="1938" class="dropdown-item">1938</div>
+                                            <div data-value="1937" class="dropdown-item">1937</div>
+                                            <div data-value="1936" class="dropdown-item">1936</div>
+                                            <div data-value="1935" class="dropdown-item">1935</div>
+                                            <div data-value="1934" class="dropdown-item">1934</div>
+                                            <div data-value="1933" class="dropdown-item">1933</div>
+                                            <div data-value="1932" class="dropdown-item">1932</div>
+                                            <div data-value="1931" class="dropdown-item">1931</div>
+                                            <div data-value="1930" class="dropdown-item">1930</div>
+                                            <div data-value="1929" class="dropdown-item">1929</div>
+                                            <div data-value="1928" class="dropdown-item">1928</div>
+                                            <div data-value="1927" class="dropdown-item">1927</div>
+                                            <div data-value="1926" class="dropdown-item">1926</div>
+                                            <div data-value="1925" class="dropdown-item">1925</div>
+                                            <div data-value="1924" class="dropdown-item">1924</div>
+                                            <div data-value="1923" class="dropdown-item">1923</div>
+                                            <div data-value="1922" class="dropdown-item">1922</div>
+                                            <div data-value="1921" class="dropdown-item">1921</div>
+                                            <div data-value="1920" class="dropdown-item">1920</div>
+                                            <div data-value="1919" class="dropdown-item">1919</div>
+                                            <div data-value="1918" class="dropdown-item">1918</div>
+                                            <div data-value="1917" class="dropdown-item">1917</div>
+                                            <div data-value="1916" class="dropdown-item">1916</div>
+                                            <div data-value="1915" class="dropdown-item">1915</div>
+                                            <div data-value="1914" class="dropdown-item">1914</div>
+                                            <div data-value="1913" class="dropdown-item">1913</div>
+                                            <div data-value="1912" class="dropdown-item">1912</div>
+                                            <div data-value="1911" class="dropdown-item">1911</div>
+                                            <div data-value="1910" class="dropdown-item">1910</div>
+                                            <div data-value="1909" class="dropdown-item">1909</div>
+                                            <div data-value="1908" class="dropdown-item">1908</div>
+                                            <div data-value="1907" class="dropdown-item">1907</div>
+                                            <div data-value="1906" class="dropdown-item">1906</div>
+                                            <div data-value="1905" class="dropdown-item">1905</div>
+                                            <div data-value="1904" class="dropdown-item">1904</div>
+                                            <div data-value="1903" class="dropdown-item">1903</div>
+                                            <div data-value="1902" class="dropdown-item">1902</div>
+                                            <div data-value="1901" class="dropdown-item">1901</div>
+                                            <div data-value="1900" class="dropdown-item">1900</div>
+                                            <div data-value="1899" class="dropdown-item">1899</div>
+                                            <div data-value="1898" class="dropdown-item">1898</div>
+                                            <div data-value="1897" class="dropdown-item">1897</div>
+                                            <div data-value="1896" class="dropdown-item">1896</div>
+                                            <div data-value="1895" class="dropdown-item">1895</div>
+                                            <div data-value="1894" class="dropdown-item">1894</div>
+                                            <div data-value="1893" class="dropdown-item">1893</div>
+                                            <div data-value="1892" class="dropdown-item">1892</div>
+                                            <div data-value="1891" class="dropdown-item">1891</div>
+                                            <div data-value="1890" class="dropdown-item">1890</div>
+                                            <div data-value="1889" class="dropdown-item">1889</div>
+                                            <div data-value="1888" class="dropdown-item">1888</div>
+                                            <div data-value="1887" class="dropdown-item">1887</div>
+                                            <div data-value="1886" class="dropdown-item">1886</div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-mobile" style="display: none;">
+                                        <select class="select">
+                                            <option value="" disabled="" selected="">Select your option</option>
+                                            <option value="2006">2006</option>
+                                            <option value="2005">2005</option>
+                                            <option value="2004">2004</option>
+                                            <option value="2003">2003</option>
+                                            <option value="2002">2002</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2000">2000</option>
+                                            <option value="1999">1999</option>
+                                            <option value="1998">1998</option>
+                                            <option value="1997">1997</option>
+                                            <option value="1996">1996</option>
+                                            <option value="1995">1995</option>
+                                            <option value="1994">1994</option>
+                                            <option value="1993">1993</option>
+                                            <option value="1992">1992</option>
+                                            <option value="1991">1991</option>
+                                            <option value="1990">1990</option>
+                                            <option value="1989">1989</option>
+                                            <option value="1988">1988</option>
+                                            <option value="1987">1987</option>
+                                            <option value="1986">1986</option>
+                                            <option value="1985">1985</option>
+                                            <option value="1984">1984</option>
+                                            <option value="1983">1983</option>
+                                            <option value="1982">1982</option>
+                                            <option value="1981">1981</option>
+                                            <option value="1980">1980</option>
+                                            <option value="1979">1979</option>
+                                            <option value="1978">1978</option>
+                                            <option value="1977">1977</option>
+                                            <option value="1976">1976</option>
+                                            <option value="1975">1975</option>
+                                            <option value="1974">1974</option>
+                                            <option value="1973">1973</option>
+                                            <option value="1972">1972</option>
+                                            <option value="1971">1971</option>
+                                            <option value="1970">1970</option>
+                                            <option value="1969">1969</option>
+                                            <option value="1968">1968</option>
+                                            <option value="1967">1967</option>
+                                            <option value="1966">1966</option>
+                                            <option value="1965">1965</option>
+                                            <option value="1964">1964</option>
+                                            <option value="1963">1963</option>
+                                            <option value="1962">1962</option>
+                                            <option value="1961">1961</option>
+                                            <option value="1960">1960</option>
+                                            <option value="1959">1959</option>
+                                            <option value="1958">1958</option>
+                                            <option value="1957">1957</option>
+                                            <option value="1956">1956</option>
+                                            <option value="1955">1955</option>
+                                            <option value="1954">1954</option>
+                                            <option value="1953">1953</option>
+                                            <option value="1952">1952</option>
+                                            <option value="1951">1951</option>
+                                            <option value="1950">1950</option>
+                                            <option value="1949">1949</option>
+                                            <option value="1948">1948</option>
+                                            <option value="1947">1947</option>
+                                            <option value="1946">1946</option>
+                                            <option value="1945">1945</option>
+                                            <option value="1944">1944</option>
+                                            <option value="1943">1943</option>
+                                            <option value="1942">1942</option>
+                                            <option value="1941">1941</option>
+                                            <option value="1940">1940</option>
+                                            <option value="1939">1939</option>
+                                            <option value="1938">1938</option>
+                                            <option value="1937">1937</option>
+                                            <option value="1936">1936</option>
+                                            <option value="1935">1935</option>
+                                            <option value="1934">1934</option>
+                                            <option value="1933">1933</option>
+                                            <option value="1932">1932</option>
+                                            <option value="1931">1931</option>
+                                            <option value="1930">1930</option>
+                                            <option value="1929">1929</option>
+                                            <option value="1928">1928</option>
+                                            <option value="1927">1927</option>
+                                            <option value="1926">1926</option>
+                                            <option value="1925">1925</option>
+                                            <option value="1924">1924</option>
+                                            <option value="1923">1923</option>
+                                            <option value="1922">1922</option>
+                                            <option value="1921">1921</option>
+                                            <option value="1920">1920</option>
+                                            <option value="1919">1919</option>
+                                            <option value="1918">1918</option>
+                                            <option value="1917">1917</option>
+                                            <option value="1916">1916</option>
+                                            <option value="1915">1915</option>
+                                            <option value="1914">1914</option>
+                                            <option value="1913">1913</option>
+                                            <option value="1912">1912</option>
+                                            <option value="1911">1911</option>
+                                            <option value="1910">1910</option>
+                                            <option value="1909">1909</option>
+                                            <option value="1908">1908</option>
+                                            <option value="1907">1907</option>
+                                            <option value="1906">1906</option>
+                                            <option value="1905">1905</option>
+                                            <option value="1904">1904</option>
+                                            <option value="1903">1903</option>
+                                            <option value="1902">1902</option>
+                                            <option value="1901">1901</option>
+                                            <option value="1900">1900</option>
+                                            <option value="1899">1899</option>
+                                            <option value="1898">1898</option>
+                                            <option value="1897">1897</option>
+                                            <option value="1896">1896</option>
+                                            <option value="1895">1895</option>
+                                            <option value="1894">1894</option>
+                                            <option value="1893">1893</option>
+                                            <option value="1892">1892</option>
+                                            <option value="1891">1891</option>
+                                            <option value="1890">1890</option>
+                                            <option value="1889">1889</option>
+                                            <option value="1888">1888</option>
+                                            <option value="1887">1887</option>
+                                            <option value="1886">1886</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <div id="back" style="display: none; visibility: hidden; opacity: 0;">
+            <div class="content">
+                <button class="confirm-button button">
+                    <p class="button-label">Previous</p>
+                    <div class="arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="73" viewBox="0 0 44.38 119">
+                            <path class="cls-1" d="M1237.38,3740c-5.51,0-9.98,6.94-9.98,6.94s-19.32,27.52-30,42.74c-5.92,7.85-5.76,11.49,0,19.65,10.68,15.22,30,42.73,30,42.73s4.47,6.94,9.98,6.94V3740Z" transform="translate(-1193 -3740)"></path>
+                        </svg>
+                    </div>
+                </button>
+                <button class="next-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="33.59" height="53.91" viewBox="0 0 33.59 53.91">
+                        <path d="M2137.58,3694.14c-1.58-1.59-19.66-21.27-19.66-21.27a8.235,8.235,0,0,0-6.2-2.32h-5.04a1.23,1.23,0,0,0-1.47,1.27v5.28a8.322,8.322,0,0,0,2.31,6.24l9.56,9.41a6.725,6.725,0,0,1,2.21,4.86,6.976,6.976,0,0,1-2.21,4.97l-9.56,9.4a8.322,8.322,0,0,0-2.31,6.24v4.97a1.234,1.234,0,0,0,1.47,1.27h4.73a8.218,8.218,0,0,0,6.2-2.33s17.71-18.98,19.97-21.25A5.256,5.256,0,0,0,2137.58,3694.14Z" transform="translate(-2105.22 -3670.56)"></path>
+                    </svg>
+                </button>
+                <button class="cancel-button">Exit test</button>
+            </div>
+        </div>
+        <div id="action-layer" style="visibility: inherit; opacity: 1; display: block;">
+            <div class="background hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 645" preserveAspectRatio="none" style="fill: rgb(0, 0, 0);">
+                    <path class="cls-1" d="M2048,2959.02c-18.03,12.62-37.56,22.04-56.62,26.27l-690.11,154.5c-53.93,12.1-128.7-11.08-166.14-51.52,0,0-49.86-53.7-115.13-124-0.17-51.88.22-138.43,0-282.29,18.03-12.62,37.56-22.04,56.62-26.27l690.11-154.5c53.93-12.1,128.7,11.08,166.14,51.52,0,0,49.86,53.7,115.13,124,0.35,140.75,0,282.27,0,282.27" transform="translate(-1024 -2498)"></path>
+                </svg>
+                <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1028 645">-->
+                <!--<path class="cls-1" preserveAspectRatio="xMidYMid"-->
+                <!--d="M-4,184c18-12.62,37.56-22,56.62-26.27L742.73,3.21c53.93-12.1,128.7,11.08,166.14,51.52l115.13,124V184S148.91,184.21-4,184Zm3,0H1024V461H-1V184ZM1024,461c-18,12.62-37.56,22-56.62,26.27L277.27,641.79c-53.93,12.1-128.7-11.08-166.14-51.52L-4,466.27V461Z" transform="translate(0 0)"/>-->
+                <!--</svg>-->
+            </div>
+            <div class="center-container">
+                <div class="content">
+                    <h1 style="color: rgb(255, 199, 50);">Good to know</h1>
+                    <p style="color: rgb(255, 199, 50);">The first three questions will help us find out more about you as a person. Don't worry, we'll keep everything anonymous.</p>
+                    <button class="next-btn">
+                        <div class="button-label" style="background-color: rgb(255, 199, 50); color: rgb(15, 105, 175);">Got it</div>
+                        <div class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27.12" height="73" viewBox="0 0 27.12 73" style="fill: rgb(255, 199, 50);">
+                                <path class="cls-1" d="M1629.87,3068c3.37,0,6.1,4.26,6.1,4.26s11.81,16.88,18.34,26.21c3.62,4.82,3.52,7.06,0,12.06-6.53,9.33-18.34,26.21-18.34,26.21s-2.73,4.26-6.1,4.26v-73Z" transform="translate(-1629.88 -3068)"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="progress" style="transform: translate(0%, -200%) matrix(1, 0, 0, 1, 0, 0);">
+            <div id="progress-head">
+                <div id="progress-check">
+                    <svg id="progress-check-svg" xmlns="http://www.w3.org/2000/svg" width="11" height="17" viewBox="0 0 11 17" fill="#0f69af">
+                        <defs>
+                            <style>
+                            .cls-2 {
+                                fill-rule: evenodd;
+                            }
+                            </style>
+                        </defs>
+                        <rect class="cls-1" x="-394" y="-0.188" width="405" height="8.813"></rect>
+                        <path class="cls-2" d="M11,5.034v9.6a1.711,1.711,0,0,1-2.773,1.379L-2.8,5.034H11Z"></path>
+                    </svg>
+                </div>
+                <div id="progress-label" class="label-highlight">0%</div>
+            </div>
+            <div id="progress-bar"></div>
+        </div>
+        <div id="info-layer" style="transform: translate(0%, -100%) matrix(1, 0, 0, 1, 0, 0);">
+            <div class="background">
+                <div class="background-top"></div>
+                <div class="background-bottom">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 90.25" preserveAspectRatio="xMinYMin" fill="#0f69af">
+                        <path id="info-bg-svg" class="cls-1" d="M1022.99,2877.07a149.075,149.075,0,0,0,53.26,15.29l821.35,74.06c49.17,4.46,109.23-16.32,151.4-50.1-0.04-12.61,0-39.34,0-39.34S1221.3,2876.42,1022.99,2877.07Z" transform="translate(-1024 -2876.75)"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="center-container">
+                <button class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="#efefef">
+                        <path class="cls-1 close-svg" d="M1520.67,2822.51h2.77a4.794,4.794,0,0,0,3.47-1.25l5.23-5.18a3.888,3.888,0,0,1,2.77-1.19,3.786,3.786,0,0,1,2.7,1.19l5.24,5.18a4.794,4.794,0,0,0,3.47,1.25h2.94a0.673,0.673,0,0,0,.71-0.8v-2.73a4.452,4.452,0,0,0-1.3-3.36l-8.17-7.67,8.17-7.74a4.422,4.422,0,0,0,1.3-3.36v-2.56a0.665,0.665,0,0,0-.71-0.79h-2.76a4.752,4.752,0,0,0-3.47,1.25l-5.24,5.17a3.86,3.86,0,0,1-2.76,1.2,3.82,3.82,0,0,1-2.71-1.2l-5.23-5.17a4.776,4.776,0,0,0-3.48-1.25h-2.94a0.659,0.659,0,0,0-.7.79v2.73a4.452,4.452,0,0,0,1.29,3.36l8.18,7.74-8.18,7.68a4.444,4.444,0,0,0-1.29,3.35v2.56a0.666,0.666,0,0,0,.7.8h0Z" transform="translate(-1519.97 -2793.5)"></path>
+                    </svg>
+                </button>
+                <p></p>
+            </div>
+        </div>
+        <footer id="footer" style="display: none; transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);">
+            <div class="confirm-layer">
+                <div class="container">
+                    <button class="change-button button has-arrow show-mobile">
+                        <div class="button-arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16.76" height="26.97" viewBox="0 0 16.76 26.97" fill="#333" style="fill: rgb(15, 105, 175);">
+                                <path class="cls-1" d="M1129.2,2629.83c0.79-.8,9.83-10.63,9.83-10.63a4.093,4.093,0,0,1,3.1-1.17h2.52a0.618,0.618,0,0,1,.74.64v2.64a4.172,4.172,0,0,1-1.16,3.12l-4.78,4.7a3.376,3.376,0,0,0-1.1,2.43,3.5,3.5,0,0,0,1.1,2.49l4.78,4.7a4.156,4.156,0,0,1,1.16,3.12v2.48a0.622,0.622,0,0,1-.74.64h-2.36a4.093,4.093,0,0,1-3.1-1.17s-8.86-9.49-9.99-10.62A2.628,2.628,0,0,1,1129.2,2629.83Z" transform="translate(-1128.62 -2618.03)"></path>
+                            </svg>
+                        </div>
+                        <p class="button-label" style="color: rgb(15, 105, 175);">Change answer</p>
+                    </button>
+                    <button class="next-btn">
+                        <div class="button-label">Confirm</div>
+                        <div class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27.12" height="73" viewBox="0 0 27.12 73">
+                                <path class="cls-1" d="M1629.87,3068c3.37,0,6.1,4.26,6.1,4.26s11.81,16.88,18.34,26.21c3.62,4.82,3.52,7.06,0,12.06-6.53,9.33-18.34,26.21-18.34,26.21s-2.73,4.26-6.1,4.26v-73Z" transform="translate(-1629.88 -3068)"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </footer>
+        <div class="container cancel-container is-absolute show-desktop">
+            <button id="cancel-btn" style="visibility: hidden; opacity: 0;">Exit test</button>
+        </div>
+        <div id="leave-layer" style="background-color: rgb(255, 200, 50); display: none; transform: translate(0%, 100%) matrix(1, 0, 0, 1, 0, 0);">
+            <div class="background">
+            </div>
+            <div class="content">
+                <p class="copy" style="color: rgb(15, 105, 175);">Abort test?</p>
+                <!--<div class="bottom">-->
+                <div class="button-container">
+                    <button class="confirm-button button">
+                        <p class="button-label" style="background-color: rgb(15, 105, 175); color: rgb(255, 200, 50);">Yes</p>
+                        <div class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="73" viewBox="0 0 44.38 119" style="fill: rgb(15, 105, 175);">
+                                <path class="cls-1" d="M1237.38,3740c-5.51,0-9.98,6.94-9.98,6.94s-19.32,27.52-30,42.74c-5.92,7.85-5.76,11.49,0,19.65,10.68,15.22,30,42.73,30,42.73s4.47,6.94,9.98,6.94V3740Z" transform="translate(-1193 -3740)"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="cancel-button button">
+                        <p class="button-label" style="background-color: rgb(15, 105, 175); color: rgb(255, 200, 50);">No</p>
+                        <div class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="27.12" height="73" viewBox="0 0 27.12 73" style="fill: rgb(15, 105, 175);">
+                                <path class="cls-1" d="M1629.87,3068c3.37,0,6.1,4.26,6.1,4.26s11.81,16.88,18.34,26.21c3.62,4.82,3.52,7.06,0,12.06-6.53,9.33-18.34,26.21-18.34,26.21s-2.73,4.26-6.1,4.26v-73Z" transform="translate(-1629.88 -3068)"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                <!--</div>-->
+            </div>
+        </div>
+        <div id="rotate-device-layer">
+            <div class="flex-top flex-item">
+                <div class="center-container">
+                    <h1>Oops!</h1>
+                </div>
+            </div>
+            <div class="flex-center flex-item">
+                <div class="rotate-image">
+                    <img src="/self-test/assets/images/rotate-device.svg">
+                </div>
+            </div>
+            <div class="flex-bottom flex-item">
+                <p>The test is optimized for landscape format. Please tilt your device.</p>
+            </div>
+        </div>
+        <div class="uiBox"></div>
+    </main>
+</div>
+<div id="spin-loader" style="visibility: hidden; opacity: 0; transform: matrix(0.3, 0, 0, 0.3, 0, 0);">
+    <div class="icon" style="animation-iteration-count: 1;"></div>
+    <p>Loading</p>
+</div>
+
+<script type="text/javascript" src="/self-test/assets/js/main.js"></script>
+
+<script>
+
+    //  if(history.state && history.state.active){
+    //    history.replaceState({active:true}, "index", "");
+    //  }else{
+    //    history.pushState({active:true}, "index", "");
+    //  }
+
+</script>
+
+
+<script type="text/javascript" id="">function getAllElementsWithAttribute(a){for(var d=[],c=document.getElementsByTagName("*"),b=0,f=c.length;b<f;b++)null!==c[b].getAttribute(a)&&d.push(c[b]);return d}parsetime=function(a){timeelements=a.match(/((\d+):)?(\d+):(\d+)$/);secs=parseInt(timeelements[4]);mins=parseInt(timeelements[3]);hours=parseInt(timeelements[2]);dursec=60*mins+secs;0<hours&&(dursec+=3600*hours);return dursec};
+checkvideo=function(a){durationtime=parsetime(a.duration);currenttime=getProgress(a.player)*durationtime/100;console.log(currenttime+" "+getProgress(a.player));newstatus=a.status;5<currenttime&&(newstatus=5);10<currenttime&&(newstatus=10);15<currenttime&&(newstatus=15);20<currenttime&&(newstatus=20);25<currenttime&&(newstatus=25);30<currenttime&&(newstatus=30);40<currenttime&&(newstatus=40);50<currenttime&&(newstatus=50);60<currenttime&&(newstatus=60);70<currenttime&&(newstatus=70);80<currenttime&&
+(newstatus=80);90<currenttime&&(newstatus=90);100<currenttime&&(newstatus=100);110<currenttime&&(newstatus=110);120<currenttime&&(newstatus=120);150<currenttime&&(newstatus=150);180<currenttime&&(newstatus=180);210<currenttime&&(newstatus=210);240<currenttime&&(newstatus=240);270<currenttime&&(newstatus=270);300<currenttime&&(newstatus=300);newstatus>a.status&&(playurl="https://e.video-cdn.net/video?video-id\x3d"+a.videoid+"\x26player-id\x3d"+a.playerid,dataLayer.push({event:"GAEvent",eventCategory:"Video",
+eventAction:"\x3e"+newstatus+"s",eventLabel:playurl,eventValue:void 0}),a.status=newstatus);setTimeout(checkvideo,5E3,a)};players=getAllElementsWithAttribute("mi24-video-player");console.log("Players found:"+players);function getProgress(a){bar=a.getElementsByClassName("mi-seek-bar-progress")[0];progressString=bar.attributes.style.value;return progress=parseFloat(progressString.match(/\d+\.\d+/))}
+[].forEach.call(players,function(a){duration=a.getElementsByClassName("mi-video-duration")[0].innerHTML;currenttimeField=a.getElementsByClassName("mi-seek-bar-progress")[0];bar=a.getElementsByClassName("mi-seek-bar-progress")[0].attributes.style;console.log(a,duration);e={status:-1};e.videoid=a.attributes["video-id"].value;e.playerid=a.attributes["player-id"].value;e.duration=duration;e.player=a;e.progress=getProgress(a);setTimeout(checkvideo,5E3,e)});</script><script type="text/javascript" id="">function getAllSections(){for(var a=[],b=document.getElementsByTagName("section"),c=0,d=b.length;c<d;c++)null!==b[c].getAttribute("id")&&a.push(b[c]);return a}
+function monitor(a,b){height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;[].forEach.call(a,function(a){rect=a.getBoundingClientRect();id=a.getAttribute("id");sec_dict=b[id];0>rect.top-height&&0<rect.bottom&&(sec_dict.time+=2);newstate=sec_dict.state;0<sec_dict.time&&(newstate=0);5<sec_dict.time&&(newstate=5);30<sec_dict.time&&(newstate=30);180<sec_dict.time&&(newstate=180);240<sec_dict.time&&(newstate=240);newstate>sec_dict.state&&(sec_dict.state=newstate,
+dataLayer.push({event:"GAEvent",eventCategory:"SectionImpression",eventAction:"\x3e"+newstate+"s",eventLabel:window.location.pathname+"#"+id,eventValue:void 0}))});setTimeout(monitor,2E3,a,b)}sections=getAllSections();secs_dict={};[].forEach.call(sections,function(a){id=a.getAttribute("id");sec_dict={time:-1,state:-1};secs_dict[id]=sec_dict});monitor(sections,secs_dict);</script><script type="text/javascript" id="">function getAllSections(){for(var b=[],c=document.getElementsByTagName("*"),a=0,e=c.length;a<e;a++)if(null!==c[a].getAttribute("id")){var d=c[a].getAttribute("id"),f=/^\d+$/;f.test(d)&&(console.log(d),b.push(c[a]))}return b}
+function monitor(b,c){height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight;[].forEach.call(b,function(a){rect=a.getBoundingClientRect();id=a.getAttribute("id");sec_dict=c[id];0>rect.top-height&&0<rect.bottom&&(sec_dict.time+=2);newstate=sec_dict.state;0<sec_dict.time&&(newstate=0);5<sec_dict.time&&(newstate=5);10<sec_dict.time&&(newstate=10);15<sec_dict.time&&(newstate=15);20<sec_dict.time&&(newstate=20);25<sec_dict.time&&(newstate=25);30<sec_dict.time&&(newstate=
+30);40<sec_dict.time&&(newstate=40);50<sec_dict.time&&(newstate=50);60<sec_dict.time&&(newstate=60);70<sec_dict.time&&(newstate=70);80<sec_dict.time&&(newstate=80);90<sec_dict.time&&(newstate=90);100<sec_dict.time&&(newstate=100);110<sec_dict.time&&(newstate=110);120<sec_dict.time&&(newstate=120);180<sec_dict.time&&(newstate=180);240<sec_dict.time&&(newstate=240);300<sec_dict.time&&(newstate=300);newstate>sec_dict.state&&(console.log(id+" "+newstate),sec_dict.state=newstate,dataLayer.push({event:"GAEvent",
+eventCategory:"NumericTagIdImpression",eventAction:"\x3e"+newstate+"s",eventLabel:window.location.pathname+"#"+id,eventValue:void 0}))});setTimeout(monitor,2E3,b,c)}sections=getAllSections();secs_dict={};[].forEach.call(sections,function(b){id=b.getAttribute("id");sec_dict={time:-1,state:-1};secs_dict[id]=sec_dict});monitor(sections,secs_dict);</script></body></html>
