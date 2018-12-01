@@ -1,0 +1,321 @@
+* {
+  color: #636366;
+}
+
+body {
+  background: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: line-through;
+}
+
+.m-bottom {
+  margin-bottom: 48px;
+}
+
+.black{
+	color:#000;
+}
+
+.white{
+  color:#fff;
+}
+
+
+.container {
+  padding-top: 0px;
+}
+
+.containerimg {
+  padding-top: 100px;
+}
+
+.body-content {
+  background: #000;
+  padding: 50px 0 50px 0;
+  position: relative;
+  z-index: 0 !important;
+}
+
+.body-content > .container {
+  position: relative;
+  top: 0px;
+  padding-bottom: 100px;
+}
+
+.jumbotron {
+  background: #DC080E;
+  background-image: linear-gradient(#DC080E, #DC080E);
+  height: 650px;
+  width: 100%;
+  z-index: 100 !important;
+}
+
+.jumbotron h1,
+.jumbotron h2 {
+  color: #DC080E;
+}
+
+button {
+  height: 80px;
+  width: 300px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 400;
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 0px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+}
+
+button:active {
+  outline: none;
+}
+
+
+
+.line {
+  height: 1px;
+  width: 100%;
+  background: #D6D6D8;
+  margin: 80px 0;
+}
+
+.grid-display {
+  margin: 20px 0;
+}
+
+.grid-display [class^="col"] {
+  background: #FBCED1;
+  border: 1px solid #FE7880;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.grid-display [class^="col"] p {
+  color: #FE7880;
+  font-size: 0.8rem;
+}
+
+pre {
+  margin-top: 30px;
+  overflow: auto;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #D8DCE6;
+  padding: 24px 0;
+}
+
+code,
+.tag,
+.el,
+.name,
+.content,
+.comment {
+  font-family: monospace;
+  font-size: 1.1rem;
+  line-height: 1.2rem;
+  color: #FFFFFF;
+}
+
+.el {
+  color: #FE7880;
+}
+
+.name {
+  color: #F9B42D;
+}
+
+.content {
+  color: #FFFFFF;
+}
+
+.comment {
+  color: #B6CAD2;
+}
+
+footer {
+  background: #DC080E;
+  padding-bottom: 0px;
+}
+
+footer p {
+  color: #fff;
+}
+
+/* IMAGES */
+
+.img {
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.img-logo {
+  background-image: url('mathack.svg');
+  background-size: contain;
+  height: 400px;
+  width: 400px;
+  padding-bottom: 8px;
+}
+
+.img-matf {
+  background-image: url('matf.svg');
+  height: 250px;
+  width: 250px;
+}
+
+.img-startit {
+  background-image: url('startit.svg');
+  height: 250px;
+  width: 250px;
+}
+
+.img-omikron {
+  background-image: url('omikron.svg');
+  height: 250px;
+  width: 250px;
+}
+
+.img-rtrk {
+  background-image: url('rtrk.svg');
+  height: 400px;
+  width: 400px;
+}
+
+.img-ey {
+  background-image: url('ey.svg');
+  height: 150px;
+  width: 150px;
+}
+
+
+.img-puzzle {
+  background-image: url('puzzle.svg');
+  height: 150px;
+  width: 150px;
+}
+
+
+.img-dsc {
+  background-image: url('dsc.svg');
+  height: 250px;
+  width: 250px;
+}
+
+.img-isn {
+  background-image: url('isn.svg');
+  height: 250px;
+  width: 250px;
+}
+.img-deploy {
+  background-image: url('deploy.svg');
+  height: 250px;
+  width: 250px;
+}
+.img-icthub {
+  background-image: url('icthub.svg');
+  height: 250px;
+  width: 250px;
+}
+
+
+/* === MEDIA QUERIES === */
+
+@media only screen and (max-width: 430px) {
+  .img-logo {
+  height: 300px;
+  width: 300px;
+  padding-bottom: 8px;
+}
+  .img-rtrk {
+  background-image: url('rtrk.svg');
+  height: 300px;
+  width: 300px;
+}
+.img-ey {
+  background-image: url('ey.svg');
+  height: 100px;
+  width: 100px;
+}
+
+
+.img-puzzle {
+  background-image: url('puzzle.svg');
+  height: 100px;
+  width: 100px;
+}
+
+
+.img-dsc {
+  background-image: url('dsc.svg');
+  height: 200px;
+  width: 200px;
+}
+
+.img-isn {
+  background-image: url('isn.svg');
+  height: 200px;
+  width: 200px;
+}
+.img-deploy {
+  background-image: url('deploy.svg');
+  height: 200px;
+  width: 200px;
+}
+.img-icthub {
+  background-image: url('icthub.svg');
+  height: 200px;
+  width: 200px;
+}
+.img-matf {
+  background-image: url('matf.svg');
+  height: 200px;
+  width: 200px;
+}
+
+.img-startit {
+  background-image: url('startit.svg');
+  height: 200px;
+  width: 200px;
+}
+
+.img-omikron {
+  background-image: url('omikron.svg');
+  height: 200px;
+  width: 200px;
+}
+  .jumbotron {
+    height: 550px;
+  }
+
+}
+
+@media only screen and (min-width: 720px) {
+  .jumbotron {
+    height: 800px;
+  }
+  .img-logo {
+  height: 500px;
+  width: 500px;
+  padding-bottom: 8px;
+}
+
+}
+
